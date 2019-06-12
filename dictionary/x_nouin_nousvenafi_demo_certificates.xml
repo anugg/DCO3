@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
     <element label="Digital Certificates" max_length="40" name="x_nouin_nousvenafi_demo_certificates" type="collection">
         <element label="Assigned CI" max_length="4000" name="assigned_ci" type="glide_list"/>
         <element label="Certificate Authority" max_length="100" name="certificate_authority" type="string"/>

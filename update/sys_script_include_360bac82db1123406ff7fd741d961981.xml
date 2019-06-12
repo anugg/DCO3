@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
@@ -29,14 +30,12 @@ DCODupilcateValidation.prototype = Object.extendsObject(global.AbstractAjaxProce
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>sudhakar.c</sys_created_by>
         <sys_created_on>2018-10-23 06:12:48</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>360bac82db1123406ff7fd741d961981</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>DCODupilcateValidation</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy>read</sys_policy>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_script_include_360bac82db1123406ff7fd741d961981</sys_update_name>
         <sys_updated_by>sudhakar.c</sys_updated_by>
         <sys_updated_on>2019-04-26 06:54:50</sys_updated_on>

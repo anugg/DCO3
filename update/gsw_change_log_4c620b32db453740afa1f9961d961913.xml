@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="gsw_change_log">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="gsw_change_log">
     <gsw_change_log action="INSERT_OR_UPDATE">
         <change_date>2019-04-30 11:02:38</change_date>
-        <changed_by display_value="Anu G">a8065238db807b00afa1f9961d9619c8</changed_by>
+        <changed_by display_value="">a8065238db807b00afa1f9961d9619c8</changed_by>
         <content display_value="IT Operations Management Guided Setup">f52f9c00c31022007bf1bea192d3aef8</content>
         <related_change_log_entry/>
         <related_task_entry/>
         <sys_class_name>gsw_change_log</sys_class_name>
         <sys_created_by>anu.g</sys_created_by>
         <sys_created_on>2019-04-30 11:02:38</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>4c620b32db453740afa1f9961d961913</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>2019-04-30 11:02:38</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>gsw_change_log_4c620b32db453740afa1f9961d961913</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-04-30 11:02:38</sys_updated_on>

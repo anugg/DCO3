@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_report">
     <sys_report action="INSERT_OR_UPDATE">
         <additional_groupby/>
         <aggregate>COUNT</aggregate>
@@ -40,7 +41,7 @@
         <field/>
         <field_list>sys_created_on,approval,opened_by,active,cat_item</field_list>
         <filter table="sc_req_item">approval=requested^opened_by=edbdc328db8ecf00f74bf3d51d9619c6^sys_created_on&gt;=javascript:gs.beginningOfLast3Months()<item endquery="false" field="approval" goto="false" newquery="false" operator="=" or="false" value="requested"/>
-            <item display_table="sys_user" display_value="Req Pers" endquery="false" field="opened_by" goto="false" newquery="false" operator="=" or="false" value="edbdc328db8ecf00f74bf3d51d9619c6"/>
+            <item endquery="false" field="opened_by" goto="false" newquery="false" operator="=" or="false" value="edbdc328db8ecf00f74bf3d51d9619c6"/>
             <item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="&gt;=" or="false" value="javascript:gs.beginningOfLast3Months()"/>
         </filter>
         <from/>
@@ -96,14 +97,12 @@
         <sys_class_name>sys_report</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-05-10 20:08:46</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
         <sys_id>cff2f430dbcad700f74bf3d51d961922</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>Approval pending</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_report_cff2f430dbcad700f74bf3d51d961922</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-04-10 07:30:46</sys_updated_on>
@@ -116,8 +115,6 @@
         <type>list</type>
         <upper_limit/>
         <use_color_heatmap>true</use_color_heatmap>
-        <use_color_palette>true</use_color_palette>
-        <use_null_in_trend>false</use_null_in_trend>
         <user>GLOBAL</user>
         <x_axis_display_grid>false</x_axis_display_grid>
         <x_axis_grid_color display_value="LightGrey">65b30308a9fe3dba01ebaa03e87e7cd3</x_axis_grid_color>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
     <element label="Certificate format" max_length="40" name="x_nouin_nousvenafi_certificate_format" type="collection">
         <element label="Active Format" max_length="40" name="active_foramt" type="boolean"/>
         <element display="true" label="Format Name" max_length="40" name="format_name" type="string"/>

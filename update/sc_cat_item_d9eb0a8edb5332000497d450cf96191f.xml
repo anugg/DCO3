@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item">
     <sc_cat_item action="INSERT_OR_UPDATE">
         <active>true</active>
         <availability>on_desktop</availability>
@@ -48,14 +49,12 @@
         <sys_class_name>sc_cat_item</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-06-13 10:46:43</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
         <sys_id>d9eb0a8edb5332000497d450cf96191f</sys_id>
         <sys_mod_count>17</sys_mod_count>
         <sys_name>Request a Certificate</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sc_cat_item_d9eb0a8edb5332000497d450cf96191f</sys_update_name>
         <sys_updated_by>jagdish.m</sys_updated_by>
         <sys_updated_on>2019-02-14 05:49:36</sys_updated_on>

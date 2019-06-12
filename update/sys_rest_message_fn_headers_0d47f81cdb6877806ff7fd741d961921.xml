@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_headers">
     <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
         <name>Content-Type</name>
         <rest_message_function display_value="GUID">5707305cdb6877806ff7fd741d9619b6</rest_message_function>
         <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
         <sys_created_by>anu.g</sys_created_by>
         <sys_created_on>2019-03-28 10:00:13</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>0d47f81cdb6877806ff7fd741d961921</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Content-Type</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_rest_message_fn_headers_0d47f81cdb6877806ff7fd741d961921</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-03-28 10:00:13</sys_updated_on>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
     <element label="Certificates" max_length="40" name="x_nouin_nousvenafi_certificate_rqst" type="collection">
         <element label="Alias" max_length="40" name="alias" type="string"/>
         <element label="API_Key" max_length="40" name="api_key" type="string"/>
@@ -22,8 +23,8 @@
         <element label="Country" max_length="40" name="country" type="string"/>
         <element choice="1" label="CSR Generation" max_length="40" name="csr_generation" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Generate a CSR for me" sequence="100" value="Generate a CSR for me"/>
-                <element inactive_on_update="false" label="I will generate my CSR" sequence="200" value="I will generate my CSR"/>
+                <element label="Generate a CSR for me" sequence="100" value="Generate a CSR for me"/>
+                <element label="I will generate my CSR" sequence="200" value="I will generate my CSR"/>
             </choice>
         </element>
         <element label="Description" max_length="1000" name="description_nous" type="string_full_utf8"/>

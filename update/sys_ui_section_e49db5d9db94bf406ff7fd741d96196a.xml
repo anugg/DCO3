@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_ui_section caption="" section_id="e49db5d9db94bf406ff7fd741d96196a" sys_domain="global" table="x_nouin_nousvenafi_certificate_rqst" version="3" view="active_certificate">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>alias</element>
@@ -624,17 +625,15 @@
             <sys_class_name>sys_ui_section</sys_class_name>
             <sys_created_by>sudhakar.c</sys_created_by>
             <sys_created_on>2019-03-19 07:24:01</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>e49db5d9db94bf406ff7fd741d96196a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_nouin_nousvenafi_certificate_rqst</sys_name>
             <sys_overrides/>
-            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
             <sys_policy/>
-            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
             <sys_update_name>sys_ui_section_e49db5d9db94bf406ff7fd741d96196a</sys_update_name>
             <sys_updated_by>sudhakar.c</sys_updated_by>
             <sys_updated_on>2019-03-19 07:24:01</sys_updated_on>

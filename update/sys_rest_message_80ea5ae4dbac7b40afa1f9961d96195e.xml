@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message">
     <sys_rest_message action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <authentication_type>basic</authentication_type>
@@ -13,14 +14,12 @@
         <sys_class_name>sys_rest_message</sys_class_name>
         <sys_created_by>jagdish.m</sys_created_by>
         <sys_created_on>2019-03-29 11:53:34</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>80ea5ae4dbac7b40afa1f9961d96195e</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Get Detail from csr</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_rest_message_80ea5ae4dbac7b40afa1f9961d96195e</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-04-01 06:37:42</sys_updated_on>

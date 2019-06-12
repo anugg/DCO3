@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_portal">
     <sp_portal action="INSERT_OR_UPDATE">
         <css_variables>$brand-primary: #428bca;&#13;
 $body-bg: #f0f3f4;&#13;
@@ -50,14 +51,12 @@ $text-muted: #979797;&#13;
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-06 12:33:54</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
         <sys_id>57ab4e59db6a5740f74bf3d51d9619ae</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>NousTPP</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sp_portal_57ab4e59db6a5740f74bf3d51d9619ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-06-06 12:44:41</sys_updated_on>
@@ -65,17 +64,18 @@ $text-muted: #979797;&#13;
         <title>NousTPP</title>
         <url_suffix>dcs</url_suffix>
     </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=57ab4e59db6a5740f74bf3d51d9619ae"/>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#ffffff</average_image_color>
         <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/png</content_type>
+        <encryption_context/>
         <file_name>logo</file_name>
         <image_height>100</image_height>
         <image_width>100</image_width>
         <size_bytes>1318</size_bytes>
         <size_compressed>1341</size_compressed>
-        <state/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-06 12:34:11</sys_created_on>
         <sys_id>8fdd4a19db6a5740f74bf3d51d9619f4</sys_id>

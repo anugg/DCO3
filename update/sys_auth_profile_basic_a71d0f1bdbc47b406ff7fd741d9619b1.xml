@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_auth_profile_basic">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_auth_profile_basic">
     <sys_auth_profile_basic action="INSERT_OR_UPDATE">
         <name>Rest Auth</name>
         <password>9Mcd8qxO+lF7MaSa+EyjGA==</password>
         <sys_class_name>sys_auth_profile_basic</sys_class_name>
         <sys_created_by>anu.g</sys_created_by>
         <sys_created_on>2019-03-13 08:04:32</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>a71d0f1bdbc47b406ff7fd741d9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Rest Auth</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_auth_profile_basic_a71d0f1bdbc47b406ff7fd741d9619b1</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-03-13 08:04:32</sys_updated_on>

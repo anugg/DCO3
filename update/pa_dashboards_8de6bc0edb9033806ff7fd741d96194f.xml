@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_dashboards">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="pa_dashboards">
     <pa_dashboards action="INSERT_OR_UPDATE">
         <active>true</active>
         <breakdown_source/>
-        <color>#ffffff</color>
-        <group display_value="Mgr group">ff22a2f5db769f40afa1f9961d961995</group>
+        <group display_value="">ff22a2f5db769f40afa1f9961d961995</group>
         <groups>744534b0dbcad700f74bf3d51d96195e,1ff434b0dbcad700f74bf3d51d9619df,d3ecf9c5db5d7b40afa1f9961d96191e</groups>
         <is_breakdown>false</is_breakdown>
         <managed_breakdown/>
@@ -11,28 +11,26 @@
         <name>DCO Manager</name>
         <no_tabs>false</no_tabs>
         <order/>
-        <owner display_value="Sudhakar C">d480a421db052700afa1f9961d961944</owner>
-        <restrict_to_roles/>
+        <owner display_value="">d480a421db052700afa1f9961d961944</owner>
+        <restrict_to_roles>pa_viewer,pa_contributor</restrict_to_roles>
         <role_override>true</role_override>
         <roles/>
-        <should_migrate_permissions>true</should_migrate_permissions>
+        <should_migrate_permissions>false</should_migrate_permissions>
         <sys_class_name>pa_dashboards</sys_class_name>
         <sys_created_by>sudhakar.c</sys_created_by>
         <sys_created_on>2019-03-21 10:11:29</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8de6bc0edb9033806ff7fd741d96194f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>DCO Manager</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>pa_dashboards_8de6bc0edb9033806ff7fd741d96194f</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-07 06:37:54</sys_updated_on>
+        <sys_updated_by>Anu</sys_updated_by>
+        <sys_updated_on>2019-06-12 08:10:45</sys_updated_on>
         <users>895babb2db911780afa1f9961d96196b</users>
         <visible_to>3</visible_to>
     </pa_dashboards>

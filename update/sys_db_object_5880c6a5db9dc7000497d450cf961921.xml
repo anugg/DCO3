@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_db_object">
     <sys_db_object action="INSERT_OR_UPDATE">
         <access>public</access>
         <actions_access>false</actions_access>
@@ -22,14 +23,12 @@
         <sys_class_path/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-09-19 06:45:28</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
         <sys_id>5880c6a5db9dc7000497d450cf961921</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Certificate Renewal History</sys_name>
-        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
-        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_db_object_5880c6a5db9dc7000497d450cf961921</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2017-09-19 06:45:28</sys_updated_on>
