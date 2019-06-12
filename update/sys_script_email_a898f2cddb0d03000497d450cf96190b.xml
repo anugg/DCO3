@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>Expiration_Date_Notification</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[	
+// var sgd1 = new GlideDate(); 
+// sgd1.setDisplayValue('2017-09-12'); 
+// var sgd2 = new GlideDate(); 
+// sgd2.setDisplayValue('2017-09-05'); 
+
+// duration= GlideDate.subtract(sgd1, sgd2); 
+// gs.info(duration.getDisplayValue());
+	
+	
+(function runMailScript(current, template, email, email_action, event){  
+  var item = new GlideRecordSecure("sc_req_item");  
+  item.addQuery("request", current.sys_id);  
+  item.query();  
+  while(item.next()) {  
+  var catalogItem = item.number + ':' + item.cat_item.getDisplayValue();  
+  var expiration_date = item.expiration_date;  
+  template.print(catalogItem + "<br/> Field:" + expiration_date);  
+  }  
+})(current, template, email, email_action, event);  
+
+]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-09-05 12:02:57</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a898f2cddb0d03000497d450cf96190b</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Expiration_Date_Notification</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_email_a898f2cddb0d03000497d450cf96190b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-19 12:18:56</sys_updated_on>
+    </sys_script_email>
+</record_update>

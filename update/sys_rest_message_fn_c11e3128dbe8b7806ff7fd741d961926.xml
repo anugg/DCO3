@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{"PolicyDN":"\\VED\\Policy\\Certificates","PKCS12":"Hai","ObjectName":"opkl.servicenow.com","Subject":"opkl.servicenow.com","OrganizationalUnit":"Professional Services","Organization":"Venafi","City":"San Francisco","State":"California","Country":"","ManagementType":"Enrollment","KeyBitSize":"2048"}</content>
+        <function_name>Certificate DN-CSR</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Create certificate [ Certificate DN-CSR ]</qualified_name>
+        <rest_endpoint>https://10.0.0.126/VEDSDK/Certificates/Request</rest_endpoint>
+        <rest_message display_value="Create certificate">685ed4d0db2877806ff7fd741d96195a</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-03-29 09:47:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c11e3128dbe8b7806ff7fd741d961926</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Certificate DN-CSR</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_c11e3128dbe8b7806ff7fd741d961926</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-23 07:39:37</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server display_value="Venafi AWS dev35307">6cf6ef33dbd50300f74bf3d51d96199d</use_mid_server>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

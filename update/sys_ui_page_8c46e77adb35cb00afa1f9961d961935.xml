@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var sysId;
+var revokereason;
+var certdn;
+var comments = gel("rvk_cmttarea").value;
+function revokeReason(){
+	revokereason = gel("revocationReason").value;
+	if(revokereason =="0"){
+		document.getElementById('inputLabel').setAttribute("revocation_reason", "required");
+		alert("Please select the reason for the revoke");
+		return false;
+	}
+
+	}
+function revokeCertificate(){
+	revokereason = gel("revocationReason").value;
+	if(revokereason =="0"){
+		document.getElementById('inputLabel').setAttribute("revocation_reason", "required");
+		alert("Please select the reason for the revoke");
+		return false;
+	}
+	alert("Please Wait,It will take few seconds to process for revoking the certificate!!!");
+	sysId = gel(selectedID).value;
+	certdn = gel(certDN).value;
+	revokereason = gel("revocationReason").value;
+	var ga = new GlideAjax('Nous_revokeCertificate');
+	ga.addParam('sysparm_name','revokeCertificate');
+	ga.addParam('sysparm_id', sysId);
+	ga.addParam('sysparm_certdn', certdn);
+	ga.addParam('sysparm_reason', revokereason);
+	ga.getXML(revoke);//callback function
+}
+
+function revoke(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	
+	if((answer == '')||(answer == 'undefined'))
+		{
+			
+			alert('Revokation Error');
+			return false;
+		}
+			
+		refreshCertificateRequest();
+	}
+
+function closeButton() {
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+
+function refreshCertificateRequest(){
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_revokeCertificate.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>  
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   <g:ui_form>
+      <input type="hidden" id="cancelled" name="cancelled" value="false"/>
+      <input type="hidden" id="selectedID" name="selectedID" value="${sysparm_sysID}"/>
+	  <input type="hidden" id="certDN" name="certDN" value="${sysparm_cDN}"/>
+      
+<div class="modal-body">
+	<div class="scroll">
+	<div class="banner error">The certificate you have attempted to revoke is duplicated in your inventory.  Duplicates are a policy violation.  In order to revoke, you must either delete one of the duplicates or change the policy to allow for duplicate certificates. The duplicated certificate is located here: Discovery\Network Discovery 1.</div>
+	<div class="object-field reason">
+ <label id="inputLabel" class='revocation_reason'>Reason for Revocation</label>
+	<br><select class="revocationReason" id="revocationReason" onChange="revokeReason()">
+		<option value="0">Unspecified</option>
+		<option value="1">Key Compromise</option>
+		<option value="2">CA Compromise</option>
+		<option value="3">Affiliation Changed</option>
+		<option value="4">Superseded</option>
+		<option value="5">Operation Stopped</option>
+		</select></br>
+</div>
+<div class="object-field comment">
+	<label>Comment</label>
+	<br><textarea class="revocationComment" id= "rvk_cmttarea" name="rvk_cmttarea" value=""></textarea></br>
+</div>
+<div class="details historical-cert-details">
+	      <table id="renewDetailsTable">
+         <j:set var="jvar_record" value="${sysparm_sysID}" />
+		  <!-- <Fetching all the related renewal records from Renewal certificate request table and display in a renewal form > -->
+         <g:evaluate var="jvar_records" jelly="true" object="true">  
+            var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+            gr.addQuery('sys_id', "${jvar_record}");
+            gr.query();
+            gr;
+         </g:evaluate>
+         <j:while test="${jvar_records.next()}">
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="commonName" label = "Common Name:" value="${jvar_records.getValue('common_name')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="organization" label = "Organization:" value="${jvar_records.getValue('organization')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="org_unit" label = "Organizational Units:" value="${jvar_records.getValue('organization_unit')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="city_locality" label = "City/Locality:" value="${jvar_records.getValue('city_locality')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="state" label = "State/Province:" value="${jvar_records.getValue('state_province')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <!-- <td>
+                  <g:ui_input_field type = "text" name="country" label = "Country:" value="${jvar_records.getValue('country')}" size ="50px" readonly="true"/>
+               </td> -->
+            </tr>
+			<!--  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="hashAlgorithm" label = "Hash Algorithm:" value="${jvar_records.getValue('hash_algorithm')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="hasprivate" label = "Hash Private key:" value="${jvar_records.getValue('hasprivate_key')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="keyAlgorithm" label = "Key Algorithm:" value="${jvar_records.getValue('RSA')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="keyStrength" label = "Key Size:" value="${jvar_records.getValue('key_size')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="issuer" label = "Issuer:" value="${jvar_records.getValue('issuer')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="status" label = "Status:" value="${jvar_records.getValue('status')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="SAN" label = "Subject Alternative Names:" value="${jvar_records.getValue('subject_alternative_names')}" size ="50px" readonly="true"/>
+               </td>
+            </tr> -->
+			 <!--  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="validFrom" label = "Valid From:"  value="${jvar_records.getValue('certificate_valid_from')}" size ="50px" readonly="true"/>
+               </td>
+            </tr> -->
+			  <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="validTo" label = "Valid To:" value="${jvar_records.getValue('certificate_valid_to')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <!-- <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="serialnm" label = "Serial Number:" value="${jvar_records.getValue('serialnm')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="SHA1thumprint" label = "SHA-1 Thumbprint:" value="${jvar_records.getValue('SHA1thumprint')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+			 <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="SHA256thumprint" label = "SHA-256 Thumbprint:" value="${jvar_records.getValue('SHA256thumprint')}" size ="50px" readonly="true"/>
+               </td>
+            </tr> -->
+         </j:while>
+      </table>
+</div></div></div>
+
+<div class="modal-footer">
+	<!-- <span class="btn ButtonCancel btn-default primary cancelRetire">Close Window Without Retiring</span>
+	<span class="btn ButtonRetire btn-danger primary">Yes, Retire</span> -->
+	<div id="submit_revoke_button" style="display: inline-block;">
+         <g:dialog_button style="background:#fff;text-align:left" onclick="closeButton()" type="button">Cancel</g:dialog_button>
+         <g:dialog_button style="color:#ffffff;background: #bf241f;border-color: #b21a0e;" onclick="revokeCertificate()" type="button">Revoke</g:dialog_button>
+      </div> 
+	<div class="revokeSuccess" id="revokeSuccess" style="display:none;">
+         <div class="sectionTitle">
+            <div class="text">This certificate is successfully revoked.</div>
+         </div>
+        
+         <g:dialog_button style="color:#ffffff;background:#278efc" onclick="refreshCertificateRequest()" type="button">OK</g:dialog_button>
+      </div>
+	</div>
+	   </g:ui_form>
+ <style>
+      .modal-title{	
+    padding: 9px 0px 9px 0px;
+    padding-left: 9px;
+    margin: -11px;
+    font-size: 12pt;
+    line-height: 26px;
+    background: #000;
+    color: #fff;
+      }
+    .banner.error {
+    background-color: #f5e4e5;
+    border-color: #f5e4e5;
+    color: #ab433e;
+	 width: 500px;
+}
+}
+	 .object-field {
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+		 
+	 #certificateRevokeModal textarea {
+    width: 100%;
+}
+	 
+	 .revocationComment{
+	width: 85%;
+	 }
+	 .revocationReason{
+	  width: 85%;
+	 }
+	 
+	 .object-field reason{
+	 width: 85%;
+	 }
+	 
+	 .object-field {
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+	 
+.historical-cert-details div.name {
+    display: inline-block;
+    width: 33%;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+	 }
+	 
+ .historical-cert-details div.value {
+    display: inline-block;
+    width: 67%;
+    padding-left: 20px;
+    padding-bottom: 2px;
+    word-wrap: break-word;
+}
+	 .banner{
+	 border: 1px solid #ccc;
+	 border-radius: 4px;
+	 padding: 20px 15px;
+	 margin-bottom: 20px;
+	 box-sizing: border-box;}
+	 div.scroll {
+    width: 528px;
+    height: 585px;
+    overflow: scroll;
+   </style> 
+}
+</j:jelly>]]></html>
+        <name>revokeCertificate</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-18 07:53:19</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8c46e77adb35cb00afa1f9961d961935</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>revokeCertificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_8c46e77adb35cb00afa1f9961d961935</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-05-17 10:57:44</sys_updated_on>
+    </sys_ui_page>
+</record_update>

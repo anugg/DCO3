@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_nouin_nousvenafi.Nous_revokeCertificate</api_name>
+        <client_callable>true</client_callable>
+        <description>This Script Include is used to check the certificate status if revoked or not and for update .</description>
+        <name>Nous_revokeCertificate</name>
+        <script><![CDATA[var status='';
+var Nous_revokeCertificate = Class.create();
+Nous_revokeCertificate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	revokeCertificate: function(){
+		var x = new Nous_GetAPIKey();
+		var apiKey = x.getValidAPIKey();
+		var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+		var selectedID = this.getParameter('sysparm_id');
+		var certificateDN = this.getParameter('sysparm_certdn');
+		var revokeReason = this.getParameter('sysparm_reason');
+		revokeReason = revokeReason.toString();
+		
+		
+		var payload = {"CertificateDN": String(certificateDN),"Reason":revokeReason};
+			
+			var json = JSON.stringify(payload);
+			gs.info("Revoke json--"+json);
+			
+			
+			var restMessage = new sn_ws.RESTMessageV2(); //Rest Call to Venafi
+			restMessage.setHttpMethod("POST");
+			restMessage.setEndpoint(gs.getProperty('x_nouin_nousvenafi.venafi_url')+"Certificates/Revoke");
+		   //restMessage.setEndpoint("x_nouin_nousvenafi.venafi_url/Certificates/Revoke");
+			restMessage.setRequestHeader('Content-Type','application/json');
+			restMessage.setRequestHeader('X-Venafi-Api-Key', apiKey);
+			restMessage.setRequestBody(json);
+			restMessage.setMIDServer(mid_server);
+			restMessage.setEccParameter('skip_sensor',true);
+			
+			var response = restMessage.execute();
+			response.waitForResponse(100);
+			var responseBody = response.getBody();
+			var objJSON = JSON.parse(responseBody);
+		    gs.info("Revoked response:"+responseBody);
+			var revoke = objJSON.Revoked;
+			var requested = objJSON.Requested;
+			var success = objJSON.Success;
+			gs.info("Certificate Revoked Response:"+revoke);
+			gs.info("Certificate Revoke requested Response:"+requested);
+			gs.info("Certificate success Response:"+success);
+			
+			if(requested == true){
+				gs.info("Certificate requested");
+				var gr = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+				gr.addQuery('sys_id', selectedID);
+				gr.query();
+				if(gr.next()){
+					gs.info("Certificate requested1");
+					gr.status = "Pending Revocation";
+					gr.update();
+					
+				}
+				status+="Pending Revocation! The current version of the certificate is currently being revoked.";
+				gs.info("Certificate requested1" +status);
+			}
+			
+			else if(revoke == true){
+				gs.info("Certificate revoke");
+				var gr1 = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+				gr1.addQuery('sys_id', selectedID);
+				gr1.query();
+				if(gr1.next()){
+					gs.info("Certificate revoke1");
+					gr1.status = "Revoked";
+					gr1.update();
+					gs.info("revoked");
+					
+				}
+				status+="You have successfully Revoked the Certificate.";
+			}
+			
+			
+			return status;
+		},
+		type: 'Nous_revokeCertificate'
+	});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-18 11:55:03</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a49d1ccfdb75cb00afa1f9961d96195e</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Nous_revokeCertificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_include_a49d1ccfdb75cb00afa1f9961d96195e</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 06:53:28</sys_updated_on>
+    </sys_script_include>
+</record_update>

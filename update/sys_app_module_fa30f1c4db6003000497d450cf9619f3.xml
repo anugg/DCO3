@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Digital Certificate Organizer">03eb195ddb0b32000497d450cf961911</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter table="sc_req_item">cat_item=d9eb0a8edb5332000497d450cf96191f^request.requested_forDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item display_table="sc_cat_item" display_value="Request a Certificate" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="d9eb0a8edb5332000497d450cf96191f"/>
+            <item endquery="false" field="request.requested_for" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Requested Item</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sc_req_item</name>
+        <order>30</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_nouin_nousvenafi.venafi_admin,x_nouin_nousvenafi.venafi_user</roles>
+        <survey/>
+        <survey_overwrite>true</survey_overwrite>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-08-08 06:55:57</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fa30f1c4db6003000497d450cf9619f3</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Requested Items</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_app_module_fa30f1c4db6003000497d450cf9619f3</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-12-13 07:01:24</sys_updated_on>
+        <timeline_page/>
+        <title>Requested Items</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

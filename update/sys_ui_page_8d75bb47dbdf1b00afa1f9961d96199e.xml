@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_contact_support_module.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:ui_form>
+<h3 style="color: #5e9ca0; text-align: center;">Nous Contact Support</h3>
+<p>$[SP]</p>
+<table style="border-collapse: separate; border-spacing: 5px 5px;">
+	
+	<g:evaluate var="jvar_company_name" jelly="true">
+   var company_name = 'Nous Info Systems';
+		company_name;
+			</g:evaluate>
+	<g:evaluate var="jvar_app_title" jelly="true">
+	     var app_title ='Digital Certificate Organizer';
+	app_title;
+</g:evaluate>
+	<g:evaluate var="jvar_version_number" jelly="true">
+	     var version_number = '1.0.15';
+	version_number;
+</g:evaluate>
+	<g:evaluate var="jvar_nous_support_contact_num">
+	var nous_support_contact_num = '732-725-7771 / 17324551379';
+	nous_support_contact_num;
+</g:evaluate>
+	
+<g:evaluate var="jvar_nous_support_email_id">
+	var nous_support_email_id = gs.getProperty('x_nouin_nousvenafi.nous_support_email_id');
+	if(nous_support_email_id=='null'){
+			nous_support_email_id='';
+			}
+	nous_support_email_id;
+</g:evaluate>
+		
+	<g:evaluate var="jvar_support_timings">
+	var support_timings ='24/7';
+		support_timings;
+</g:evaluate>
+				
+		<g:ui_form>
+			<tr>
+			<td >
+			<g:ui_input_field type="text" name="company_name" id="company_name" label="Company Name:" value="${jvar_company_name}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+			<tr>
+			<td >
+			<g:ui_input_field type="text" name="app_title" id="app_title" label="App Title:" value="${jvar_app_title}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+			<tr>
+			<td >
+			<g:ui_input_field type="text" name="version_number" id="version_number" label="Version Number:" value="${jvar_version_number}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+		<tr>
+			<td >
+			<g:ui_input_field type="text" name="nous_support_contact_num" id="nous_support_contact_num" label="Nous Support Contact Number:" value="${jvar_nous_support_contact_num}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+			
+		<tr>
+			<td>
+				 <g:ui_input_field name="nous_support_email_id" id="nous_support_email_id" label="Nous Support Email Id:" value="${jvar_nous_support_email_id}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+				</tr>
+		<tr>
+			<td>
+				 <g:ui_input_field name="support_timings" id="support_timings" label="Support Timings:" value="${jvar_support_timings}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP] $[SP] $[SP]</td>
+				</tr>	
+			
+							
+		<tr><td colspan="2" height="15px"></td></tr>
+	<tr><td style="text-align: center;" colspan="2">
+		<g:dialog_buttons_ok_cancel ok="return true" cancel="return false"/>
+	</td></tr>
+			</g:ui_form>
+
+</table>
+</g:ui_form>
+</j:jelly>]]></html>
+        <name>contact_support_module</name>
+        <processing_script><![CDATA[gs.setProperty("x_nouin_nousvenafi.nous_support_email_id", nous_support_email_id);
+	//gs.setProperty("nous_support_contact_number",x_nouin_nousvenafi.nous_support_contact_number);
+	]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-19 13:34:37</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8d75bb47dbdf1b00afa1f9961d96199e</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>contact_support_module</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_8d75bb47dbdf1b00afa1f9961d96199e</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-11-12 10:54:52</sys_updated_on>
+    </sys_ui_page>
+</record_update>

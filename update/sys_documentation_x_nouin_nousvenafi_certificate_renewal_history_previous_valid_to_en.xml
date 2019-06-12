@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="previous_valid_to" label="Previous Valid To" language="en" table="x_nouin_nousvenafi_certificate_renewal_history">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>previous_valid_to</element>
+            <help/>
+            <hint/>
+            <label>Previous Valid To</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_certificate_renewal_history</name>
+            <plural>Previous Valid Tos</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-09-19 11:26:28</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>e40143eddb110b000497d450cf9619f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Previous Valid To</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_documentation_x_nouin_nousvenafi_certificate_renewal_history_previous_valid_to_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-09-19 11:26:28</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

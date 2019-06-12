@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_defualt_value_properties.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   <g:evaluate var="gr_cat_item" object="true" jelly="true">	
+      var catItemId;
+      var ecString;
+      var gr2 = new GlideRecordSecure('sc_cat_item');
+      gr2.addQuery('sys_scope.name', 'Digital Certificate Organizer');
+      gr2.query();
+      while(gr2.next()){
+      catItemId = gr2.sys_id;
+      }
+      ecString = "cat_item.sys_id="+catItemId; 
+   </g:evaluate>
+   <g:evaluate var="gr_item_vars" object="true" jelly="true">	
+      var gr3 = new GlideRecordSecure('item_option_new');
+      gr3.addEncodedQuery(ecString);
+      gr3.addQuery('type','NOT IN','12,20,24,19,11,14,17')
+      gr3.addQuery('name', '!=','country');
+	  gr3.addQuery('name','!=','use_case');
+	  gr3.addQuery('name','!=', 'csr_contents_city');
+	   gr3.addQuery('name','!=', 'assigned_ci');
+	   gr3.addQuery('name','!=', 'attributes_values');
+	   gr3.addQuery('name','!=', 'automatic_renewal');
+	   gr3.addQuery('name','!=', 'certificate_authority');
+	   gr3.addQuery('name','!=', 'certificate_folder');
+	gr3.addQuery('name','!=', 'certificate_validity');
+	gr3.addQuery('name','!=', 'common_name');
+	gr3.addQuery('name','!=', 'contacts');
+	gr3.addQuery('name','!=', 'csr_generation');
+	gr3.addQuery('name','!=', 'description_nous');
+	gr3.addQuery('name','!=', 'enter_csr');
+	gr3.addQuery('name','!=', 'hash_algorithm');
+	   gr3.addQuery('name','!=', 'hash_algorithm_old');
+	   gr3.addQuery('name','!=', 'management_type');
+	    gr3.addQuery('name','!=', 'management_type_old');	
+	   gr3.addQuery('name','!=', 'nickname');
+	   gr3.addQuery('name','!=', 'key_strength');
+	   gr3.addQuery('name','!=', 'key_strength_old');
+	      gr3.addQuery('name','!=', 'management_type_old');	
+ gr3.addQuery('name','!=', 'specify_end_date');
+	   gr3.addQuery('name','!=', 'requested_for');
+	   gr3.addQuery('name','!=', 'email');
+	   gr3.addQuery('name','!=', 'dns');
+	   gr3.addQuery('name','!=', 'uri');
+	   gr3.addQuery('name','!=', 'ip');
+	   gr3.addQuery('name','!=', 'upn');
+	   gr3.addQuery('name','!=', 'subject_alternative_names_email');
+	    gr3.addQuery('name','!=', 'subject_alternative_names_dns');
+	    gr3.addQuery('name','!=', 'subject_alternative_names_ip');
+	    gr3.addQuery('name','!=', 'subject_alternative_names_upn');
+	    gr3.addQuery('name','!=', 'subject_alternative_names_uri');
+	   gr3.addQuery('name','!=', 'country');
+      gr3.orderBy('name');
+      gr3.query();
+      gr3;
+   </g:evaluate>
+   <g:ui_form>
+      <h3 style="color: #5e9ca0; text-align: center;">Certificate Request Default Values</h3>
+	   <h5 style="color: #5e9ca0; text-align: center;">These default values are populated from Venafi, changing the values might impact the process.</h5>
+      <p>$[SP]</p>
+      <table style="border-collapse: separate; border-spacing: 5px 5px;">
+         <tr>
+            <td colspan="2" height="15px">
+               <h4 style="margin-left: 65px;">Field Name</h4>
+            </td>
+         </tr>
+         <j:set var="jvar_x" value="0"  />
+         <j:while test="${gr3.next()}">
+            <g:evaluate var="jvar_isChecked" jelly="true">
+               var isChecked = gs.getProperty('x_nouin_nousvenafi.default_'+ gr3.name);
+               isChecked;
+            </g:evaluate>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="${gr3.name}_${jvar_x}" label = "${gr3.question_text}:" value="${jvar_isChecked}" size ="50px" readonly="true" />
+               </td>
+            </tr>
+            <j:set var="jvar_x" value="${jvar_x+1}"/>
+         </j:while>
+         <!-- Country Dropdown Start-->
+         <g2:evaluate var="jvar_cntry" object="true" jelly="true">
+            var cntry = new GlideRecordSecure('core_country');
+            cntry.query();
+            cntry;
+         </g2:evaluate>
+		  <g2:evaluate var="jvar_selectCountry" object="true">
+			  var selectCountry = gs.getProperty('x_nouin_nousvenafi.default_country');
+			  selectCountry;
+		  </g2:evaluate>
+         <tr>
+            <td>
+               <g:ui_choice_input_field id="country_choice" name="country_choice" for="country_choice" label="${gs.getMessage('Country:')}" mandatory="true">
+                  <option value="" selected ="SELECTED">${gs.getMessage('-- Select Country --')}</option>
+                  <j2:while test="$[jvar_cntry.next()]">
+                      
+					<j2:if test="$[ jvar_cntry.getValue('iso3166_2')==jvar_selectCountry ]">
+							<option value="$[jvar_cntry.getValue('iso3166_2')]" selected="true">$[jvar_cntry.getValue('iso3166_2')]</option>
+					</j2:if>
+					<j2:if test="$[ jvar_cntry.getValue('iso3166_2')!=jvar_selectCountry ]">
+							<option value="$[jvar_cntry.getValue('iso3166_2')]">$[jvar_cntry.getValue('iso3166_2')]</option>
+					</j2:if>
+							
+					  
+                  </j2:while>
+               </g:ui_choice_input_field>
+            </td>
+         </tr>
+         <!-- Country Dropdown End -->
+         <tr>
+            <td colspan="2" height="15px"> </td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <g:dialog_buttons_ok_cancel ok="return true" cancel="return false"/>
+            </td>
+         </tr>
+      </table>
+   </g:ui_form>
+</j:jelly>]]></html>
+        <name>defualt_value_properties</name>
+        <processing_script><![CDATA[var catItemId;
+var ecString;
+var gr2 = new GlideRecord('sc_cat_item');
+gr2.addQuery('sys_scope.name', 'Digital Certificate Organizer');
+gr2.query();
+while(gr2.next()){
+	catItemId = gr2.sys_id;
+}
+ecString = "cat_item.sys_id="+catItemId;
+var gr3 = new GlideRecord('item_option_new');
+gr3.addEncodedQuery(ecString);
+gr3.addQuery('type','NOT IN','12,20,24,19,11,14,17');
+gr3.addQuery('name', '!=','country');
+gr3.addQuery('name','!=', 'use_case');
+gr3.addQuery('name','!=', 'csr_contents_city');
+gr3.addQuery('name','!=', 'assigned_ci');
+gr3.addQuery('name','!=', 'attributes_values');
+gr3.addQuery('name','!=', 'automatic_renewal');
+gr3.addQuery('name','!=', 'certificate_authority');
+gr3.addQuery('name','!=', 'certificate_folder');
+gr3.addQuery('name','!=', 'certificate_validity');
+gr3.addQuery('name','!=', 'common_name');
+gr3.addQuery('name','!=', 'contacts');
+gr3.addQuery('name','!=', 'csr_generation');
+gr3.addQuery('name','!=', 'description_nous');
+gr3.addQuery('name','!=', 'enter_csr');
+gr3.addQuery('name','!=', ' key_strength');
+gr3.addQuery('name','!=', 'key_strength_old');
+gr3.addQuery('name','!=', 'hash_algorithm');
+gr3.addQuery('name','!=', 'hash_algorithm');
+gr3.addQuery('name','!=', 'hash_algorithm_old');
+gr3.addQuery('name','!=', 'management_type');
+gr3.addQuery('name','!=', 'management_type_old');
+gr3.addQuery('name','!=', 'nickname');
+gr3.addQuery('name','!=', 'requested_for');
+gr3.addQuery('name','!=', 'email');
+gr3.addQuery('name','!=', 'dns');
+gr3.addQuery('name','!=', 'uri');
+gr3.addQuery('name','!=', 'ip');
+gr3.addQuery('name','!=', 'upn');
+gr3.addQuery('name','!=', 'subject_alternative_names_email');
+gr3.addQuery('name','!=', 'subject_alternative_names_dns');
+gr3.addQuery('name','!=', 'subject_alternative_names_ip');
+gr3.addQuery('name','!=', 'subject_alternative_names_upn');
+gr3.addQuery('name','!=', 'subject_alternative_names_uri');
+gr3.addQuery('name','!=', 'specify_end_date');
+gr3.addQuery('name','!=', 'country');
+gr3.orderBy('name');
+gr3.query();
+var z=0;
+while(gr3.next()) {
+	gs.setProperty("x_nouin_nousvenafi.default_"+gr3.name, request.getParameter(gr3.name+"_"+z++));
+	gs.setProperty("x_nouin_nousvenafi.default_country", country_choice);
+}]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-31 10:54:36</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>6e01d3f9db4332000497d450cf96198c</sys_id>
+        <sys_mod_count>111</sys_mod_count>
+        <sys_name>defualt_value_properties</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_6e01d3f9db4332000497d450cf96198c</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 06:44:49</sys_updated_on>
+    </sys_ui_page>
+</record_update>

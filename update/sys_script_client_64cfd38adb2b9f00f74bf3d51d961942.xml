@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>sys_created_on</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Testing</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   config = Packages.com.service_now.mid.services.Config.get();
+var user =    config.getProperty("mid.instance.username");
+var password =config.getProperty("mid.instance.password");
+g_form.info(getMessage('pass'+password));
+g_form.showFieldMsg('password','Low impact response time can be one week'+password,'info');
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-28 19:30:54</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>64cfd38adb2b9f00f74bf3d51d961942</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Testing</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_client_64cfd38adb2b9f00f74bf3d51d961942</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-05-15 12:28:11</sys_updated_on>
+        <table>ecc_agent</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

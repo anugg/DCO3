@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_nouin_nousvenafi.load_existing_certificate</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>load_existing_certificate</name>
+        <script><![CDATA[var load_existing_certificate = Class.create();
+load_existing_certificate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	loadCertificate: function(){
+		var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+url = (url + 'authorize');
+var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+var pwd = gs.getProperty('x_nouin_nousvenafi.password');
+var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+//var count=0;
+
+var payload = {"Username": String(uname),"Password": String(pwd)};
+	var json = JSON.stringify(payload);
+	var sm = new sn_ws.RESTMessageV2();
+	sm.setEndpoint(url);
+	sm.setHttpMethod("POST");
+	sm.setRequestHeader('Content-Type','application/json');
+	sm.setRequestBody(json);
+	//if (!mid_server.isNil())
+	sm.setMIDServer(mid_server);
+	var response = sm.execute();
+	
+	var responseBody = response.getBody();
+	
+	//var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	//var status = response.getStatusCode();
+	gs.info(responseBody);
+	
+	var objJSON = JSON.parse(responseBody);//Parse JSON response
+	var apiKey = objJSON.APIKey;
+	//var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	//var status = response.getStatusCode();
+	gs.info('Response in Get API Key Call:'+apiKey);
+	var urlNew = "https://10.0.0.126/VEDSDK/Certificates/?limit=1";
+	var responseBody1;
+	var responseBody2;
+	var guid_val;
+	var guid_value;
+	var parsed_res;
+	var cert_detail;
+	
+	var city1 = [];
+	var response2;
+	var issuer;
+	var n = [];
+	var citystr;
+	var city;
+var valid;
+var state;
+var country;
+var valid_to;
+var valid_from;
+var createdon;
+var parsedResponse3;
+var allcount;
+	var r = new sn_ws.RESTMessageV2();
+	r.setEndpoint(urlNew);
+	r.setHttpMethod("GET");
+	r.setRequestHeader('Content-Type','application/json');
+	r.setRequestHeader('X-Venafi-Api-Key', apiKey);//workflow.scratchpad
+	r.setMIDServer(mid_server);
+	var response1 = r.execute();
+	response1.waitForResponse(2000);
+	responseBody1 = response1.getBody();
+	gs.info("Certificate Details Response+get:"+responseBody1);
+	
+	var parsedResponse = JSON.parse(responseBody1);
+	var final_count = parsedResponse.TotalCount;
+	gs.info("Count sj:"+final_count);
+if(final_count>1)
+	{
+		parsedResponse3 = getallcertificates(10);
+	}
+	for(var i=0;i<10;i++)
+		{
+		//=====new code====
+		var r2 = new sn_ws.RESTMessageV2();
+		
+		guid_val = parsedResponse3.Certificates[i].Guid;
+		guid_value = guid_val.substring(1,guid_val.length-1);
+		//gs.info("certificate detail guid : "+guid_value.length);
+		//gs.info("certificate detail guid : "+guid_value);
+		r2.setEndpoint("https://10.0.0.126/VEDSDK/certificates/"+guid_value);
+		r2.setHttpMethod("GET");
+		r2.setRequestHeader('Content-Type','application/json');
+		r2.setRequestHeader('X-Venafi-Api-Key', apiKey);//workflow.scratchpad
+		r2.setMIDServer(mid_server);
+		response2 = r2.execute();
+		response2.waitForResponse(2000);
+		responseBody2 = response2.getBody();
+		
+		gs.info("Certificate Details Response SJ-TestLoad+get:"+responseBody2);
+		parsed_res = JSON.parse(responseBody2);
+		gs.info("Hai SJ-TestLoad+get: "+parsed_res.CertificateDetails.Issuer);
+		issuer = parsed_res.CertificateDetails.Issuer;
+		city = getresult(issuer,"L=","City=");
+		state = getresult(issuer, "S=", "State=");
+		country =  getresult(issuer, "C=", "Country=");
+// 		gs.info("hai city state country"+city+": "+state+": "+country);
+		valid_to=validfields(parsed_res.CertificateDetails.ValidTo);
+		valid_from=validfields(parsed_res.CertificateDetails.ValidFrom);
+// 		gs.info("Validity from" + valid_from + " valdity To" + valid_to);
+// 			gs.info("Subject Alternative names" +parsed_res.RenewalDetails.SubjectAltNameDNS);
+			createdon=validfields(parsed_res.CreatedOn);
+			var gr = new GlideRecord('x_nouin_nousvenafi_demo_certificates');
+	gr.addQuery('guid','==','parsedResponse3.Certificates[i].Guid');
+	gr.query();
+	if(gr.next())
+		{
+		
+		gr.guid=parsedResponse3.Certificates[i].Guid;
+		gr.common_name=parsedResponse3.Certificates[i].Name;
+		gr.certificate_folder=parsedResponse3.Certificates[i].ParentDn;
+		gr.certificate_dn=parsedResponse3.Certificates[i].DN;
+		gr.city_locality=city;
+		gr.state_province=state;
+		gr.country=country;
+		gr.certificate_authority=parsed_res.CertificateAuthorityDN;
+		gr.subject_alternative_names_dns=parsed_res.RenewalDetails.SubjectAltNameDNS;
+		gr.setValue("certificate_valid_till",valid_to);
+		gr.setValue("certificate_valid_from",valid_from);
+		gr.certificate_date=createdon;
+			if(parsed_res.CertificateDetails.RevocationStatus=="Confirmed")
+			   {
+				gr.status="Revoked";
+			}
+		gr.update();
+		
+	}
+	else
+		{
+		gr.initialize();
+		
+		gr.guid=parsedResponse3.Certificates[i].Guid;
+		gr.common_name=parsedResponse3.Certificates[i].Name;
+		gr.certificate_folder=parsedResponse3.Certificates[i].ParentDn;
+		gr.certificate_dn=parsedResponse3.Certificates[i].DN;
+		if (city==" ")
+				{
+				
+					gr.city_locality=parsed_res.RenewalDetails.city;
+				}
+			else
+				{
+			gr.city_locality=city;
+				}
+		gr.state_province=state;
+		gr.country=country;
+		gr.certificate_authority=parsed_res.CertificateAuthorityDN;
+		gr.subject_alternative_names_dns=parsed_res.RenewalDetails.SubjectAltNameDNS;
+		gr.setValue("certificate_valid_till",valid_to);
+		gr.setValue("certificate_valid_from",valid_from);
+		gr.certificate_date=createdon;
+			if(parsed_res.CertificateDetails.RevocationStatus=="Confirmed")
+			   {
+				gr.status="Revoked";
+			}
+			else
+				{
+					gr.status=retire(valid_to);
+				}
+		gr.insert();
+			if(i == 9){
+				//generate the notification
+				gs.info("notification generated");
+gs.info("Email Address " +gs.getUser().getEmail());				gs.eventQueue("x_nouin_nousvenafi.load_existing_data",gr,gs.getUser().getEmail());
+			}
+			
+		//gs.addInfoMessage("Load Else");
+	}
+	
+}
+function getresult(str, cri1, cri2){
+var n=[];
+var value;
+var value_str;
+n=str.split(',');
+for(var i =0; i<n.length; i++){
+if(n[i].includes(cri1)){
+value_str = n[i];
+value_str =  value_str.trim();
+value = value_str.substring(2,value_str.length);
+}
+else if(n[i].includes(cri2)){
+}
+
+}
+return value;
+}
+function validfields(valid)
+{
+var res;
+var res1;
+var res2;
+res = valid.replace("valid", " ");
+res1 = res.replace("T", " ");
+res2=res1.replace(".0000000Z"," ");
+return res2;	
+}
+function retire(valid_to)
+{
+var gdate=new GlideDateTime();
+var gdate1=valid_to;
+if(gdate1<gdate)
+{
+return 'Retired';
+	}
+	else
+		{
+			return;
+		}
+}
+function getallcertificates(allcount)
+{
+	var r3 = new sn_ws.RESTMessageV2();
+	var urlNew3 = "https://10.0.0.126/VEDSDK/Certificates/?limit="+allcount;
+	r3.setEndpoint(urlNew3);
+	r3.setHttpMethod("GET");
+	r3.setRequestHeader('Content-Type','application/json');
+	r3.setRequestHeader('X-Venafi-Api-Key', apiKey);//workflow.scratchpad
+	r3.setMIDServer(mid_server);
+	var response3= r3.execute();
+	response3.waitForResponse(2000);
+	responseBody3 = response3.getBody();
+	gs.info("Certificate Details Response3+get:"+responseBody3);
+	
+	var parsedResponse3 = JSON.parse(responseBody3);
+	return  parsedResponse3;
+}
+		},
+		type: 'load_existing_certificate'
+	});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-04-03 12:20:12</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>90f050dadb247f40afa1f9961d96198a</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>load_existing_certificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_include_90f050dadb247f40afa1f9961d96198a</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-05-20 06:53:56</sys_updated_on>
+    </sys_script_include>
+</record_update>

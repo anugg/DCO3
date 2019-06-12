@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_source">
+    <sys_report_source action="INSERT_OR_UPDATE">
+        <description/>
+        <display>Certificates created this month (Certificates)</display>
+        <filter table="x_nouin_nousvenafi_certificate_rqst">sys_created_onONThis month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()^EQ<item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="ON" or="false" value="This month@javascript:gs.beginningOfThisMonth()@javascript:gs.endOfThisMonth()"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <name>Certificates created this month</name>
+        <sys_class_name>sys_report_source</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-04-17 06:55:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>701d07a6db747b006ff7fd741d961909</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Certificates created this month (Certificates)</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_report_source_701d07a6db747b006ff7fd741d961909</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-17 06:55:33</sys_updated_on>
+        <table>x_nouin_nousvenafi_certificate_rqst</table>
+    </sys_report_source>
+</record_update>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Existing certificate</name>
+        <run_as display_value="Anu G">a8065238db807b00afa1f9961d9619c8</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-04-03 08:29:48</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+url = (url + 'authorize');
+var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+var pwd = gs.getProperty('x_nouin_nousvenafi.password');
+var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+var count=0;
+
+var payload = {"Username": String(uname),"Password": String(pwd)};
+	var json = JSON.stringify(payload);
+	var sm = new sn_ws.RESTMessageV2();
+	sm.setEndpoint(url);
+	sm.setHttpMethod("POST");
+	sm.setRequestHeader('Content-Type','application/json');
+	sm.setRequestBody(json);
+	//if (!mid_server.isNil())
+	sm.setMIDServer(mid_server);
+	var response = sm.execute();
+	
+	var responseBody = response.getBody();
+		
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+		gs.info(responseBody);
+		
+	var objJSON = JSON.parse(responseBody);//Parse JSON response
+	var apiKey = objJSON.APIKey;
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+//gs.info('Response in Get API Key Call:'+apiKey);
+var responseBody1;
+var r = new sn_ws.RESTMessageV2();
+r.setEndpoint("https://10.0.0.126/VEDSDK/certificates/37bd6db5-4d69-4cac-9dd7-db3b1dbdd1f5");
+r.setHttpMethod("GET");
+r.setRequestHeader('Content-Type','application/json');
+r.setRequestHeader('X-Venafi-Api-Key', apiKey);//workflow.scratchpad
+r.setMIDServer(mid_server);
+var response = r.execute();
+response.waitForResponse(2000);
+responseBody1 = response.getBody();
+gs.info("Certificate Details Response city1+get:"+responseBody1);
+var parsed_res = JSON.parse(responseBody1);
+var cert_detail = [];
+cert_detail= parsed_res.CertificateDetails.Issuer.split(',');
+var city = cert_detail[4];
+var state= cert_detail[5];
+var country= cert_detail[6];
+var city1=[];
+city1=city.split("=");
+gs.info("Hai"+city1[1]);
+gs.info("log for city1 : "+city +" State "+ state +" country" + country);
+var DNS=parsed_res.RenewalDetails.SubjectAltNameDNS;
+var validDateTo=parsed_res.CertificateDetails.ValidTo;
+var validDateFrom=parsed_res.CertificateDetails.ValidFrom;
+var ManagementType=parsed_res.ManagementType;]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-04-03 08:35:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>da7cd382db64fb806ff7fd741d961990</sys_id>
+        <sys_mod_count>61</sys_mod_count>
+        <sys_name>Existing certificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysauto_script_da7cd382db64fb806ff7fd741d961990</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-30 04:33:40</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

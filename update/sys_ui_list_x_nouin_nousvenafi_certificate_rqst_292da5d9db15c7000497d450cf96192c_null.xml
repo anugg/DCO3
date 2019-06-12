@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="x_nouin_nousvenafi_certificate_rqst" relationship="292da5d9db15c7000497d450cf96192c" sys_domain="global" table="x_nouin_nousvenafi_certificate_renewal_history" version="2" view="">
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_nouin_nousvenafi_certificate_renewal_history</name>
+            <parent>x_nouin_nousvenafi_certificate_rqst</parent>
+            <position/>
+            <relationship display_value="Certificates Renewal History">292da5d9db15c7000497d450cf96192c</relationship>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-08-10 08:12:27</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4741049adbf35740f74bf3d51d9619f2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_nouin_nousvenafi_certificate_renewal_history</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_ui_list_x_nouin_nousvenafi_certificate_rqst_292da5d9db15c7000497d450cf96192c_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-08-10 08:12:27</sys_updated_on>
+            <sys_user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_field_display_properties.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:evaluate var="gr_cat_item" object="true" jelly="true">
+var catItemId;
+var ecString;
+var gr2 = new GlideRecordSecure('sc_cat_item');
+gr2.addQuery('sys_scope.name', 'Digital Certificate Organizer');
+gr2.query();
+while(gr2.next()){
+	catItemId = gr2.sys_id;
+}
+ecString = "cat_item.sys_id="+catItemId;
+</g:evaluate>
+<g:evaluate var="gr_item_vars" object="true" jelly="true">
+var gr3 = new GlideRecordSecure('item_option_new');
+gr3.addEncodedQuery(ecString);
+gr3.addQuery('type','NOT IN','12,20,24,19,11,14,17');
+gr3.orderBy('name');
+gr3.query();
+gr3;
+</g:evaluate>
+
+<g:ui_form id="settingsForm">
+<h3 style="color: #5e9ca0; text-align: center;">Certificate Request Field Visibility</h3>
+	<p>$[SP]</p>
+<table style="border-collapse: separate; border-spacing: 5px 5px;">
+	<tr><th width="50px"><h4>$[SP]Show</h4></th><th><h4>Field Names</h4></th></tr>
+<j:set var="jvar_x" value="0"/>
+<j:while test="${gr3.next()}">
+	<g:evaluate var="jvar_isChecked" jelly="true">
+	var isChecked = gs.getProperty('x_nouin_nousvenafi.show_' + gr3.name);
+	isChecked;
+	</g:evaluate>
+	<tr>
+	<td>
+	<g:ui_checkbox name="${gr3.name}_${jvar_x}" value="${jvar_isChecked}"/>
+		</td>
+		<td>$[SP]<b>${gr3.question_text}</b> </td>
+			</tr>
+			<j:set var="jvar_x" value="${jvar_x+1}"/>
+				</j:while>
+				<tr><td colspan="2" height="15px"></td></tr>
+				<tr>
+				<td colspan="2">
+				<g:dialog_buttons_ok_cancel ok="return true" cancel="return"/>
+				</td>
+				</tr>
+	 </table>
+ </g:ui_form>
+</j:jelly>]]></html>
+        <name>field_display_properties</name>
+        <processing_script><![CDATA[var appID;
+var gr = new GlideRecord('sys_app');
+gr.addQuery('scope','x_nouin_nousvenafi');
+gr.query();
+while(gr.next()){
+	appID = gr.sys_id;
+}
+var catItemId;
+var ecString;
+var gr2 = new GlideRecord('sc_cat_item');
+gr2.addQuery('sys_scope.name', 'Digital Certificate Organizer');
+gr2.query();
+while(gr2.next()){
+	catItemId = gr2.sys_id;
+}
+ecString = "cat_item.sys_id="+catItemId;
+var gr3 = new GlideRecord('item_option_new');
+gr3.addEncodedQuery(ecString);
+gr3.addQuery('type','NOT IN','12,20,24,19,11,14,17');
+gr3.orderBy('name');
+gr3.query();
+var z=0;
+while(gr3.next()) {
+	gs.setProperty("x_nouin_nousvenafi.show_"+gr3.name,
+	request.getParameter(gr3.name+"_"+z++));
+}]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-29 13:29:20</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>2ff06911db4b32000497d450cf9619b2</sys_id>
+        <sys_mod_count>253</sys_mod_count>
+        <sys_name>field_display_properties</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_2ff06911db4b32000497d450cf9619b2</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 06:45:18</sys_updated_on>
+    </sys_ui_page>
+</record_update>

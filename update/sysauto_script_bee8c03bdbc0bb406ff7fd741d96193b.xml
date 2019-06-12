@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Get Retired on Expiry</name>
+        <run_as display_value="Anu G">a8065238db807b00afa1f9961d9619c8</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 01:00:00</run_period>
+        <run_start>2019-03-14 07:03:28</run_start>
+        <run_time>1970-01-01 17:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var gr1=new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+//gr1.addQuery('status','!=','retired');
+gr1.addEncodedQuery("status!=Retired^ORstatus=NULL^status!=Revoked^ORstatus=NULL");
+gr1.query();
+while(gr1.next())
+{
+var gdate=new GlideDateTime();
+var gdate1=gr1.certificate_valid_to;
+if(gdate1<gdate)
+{
+gs.info("Expiry date"+gr1.nickname);
+	gr1.status='Retired';
+	gr1.update();
+}
+}
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-03-14 07:05:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bee8c03bdbc0bb406ff7fd741d96193b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Get Retired on Expiry</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysauto_script_bee8c03bdbc0bb406ff7fd741d96193b</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-30 09:09:44</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

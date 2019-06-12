@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var sysId ;
+function retiredCertificate(){
+	alert("Please Wait,It will take few seconds to process for retrired the certificate!!!");
+	sysId = gel(selectedID).value;
+	certdn = gel(certDN).value;
+	var ga = new GlideAjax('Nous_RetireCertificate');
+	ga.addParam('sysparm_name','retireCertificate');
+	ga.addParam('sysparm_id', sysId);
+	ga.addParam('sysparm_certdn', certdn);
+	ga.getXML(retire);//callback function
+}
+
+function retire(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	if((answer == '')||(answer == 'undefined'))
+		{
+			
+			alert('Certification Retired Error');
+			refreshCertificateRequest();
+		}
+		refreshCertificateRequest();
+	}
+
+function closeButton() {
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+
+function refreshCertificateRequest(){
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_retiredCertificate.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>  
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   <g:ui_form>
+      <input type="hidden" id="cancelled" name="cancelled" value="false"/>
+      <input type="hidden" id="selectedID" name="selectedID" value="${sysparm_sysID}"/>
+	     <input type="hidden" id="certDN" name="certDN" value="${sysparm_cDN}"/>
+      
+<div class="modal-body"><div class="retireWarning banner error">You are about to retire this certificate!</div>
+	<p>Setting this certificate to "Retired" will disable all notifications and validation warnings. Scheduled renewals will be canceled. You can view retired certificates by setting the certificate filter Status to "Retired."</p>
+
+<p><b>Are you sure you want to retire this certificate?</b></p></div>
+<div class="modal-footer">
+	<!-- <span class="btn ButtonCancel btn-default primary cancelRetire">Close Window Without Retiring</span>
+	<span class="btn ButtonRetire btn-danger primary">Yes, Retire</span> -->
+	<div id="submit_retired_button" style="display: inline-block;">
+         <g:dialog_button style="background:#fff;text-align:left" onclick="closeButton()" type="button">Close window Without Retiring</g:dialog_button>
+         <g:dialog_button style="color:#ffffff;background: #bf241f;border-color: #b21a0e;" onclick="retiredCertificate()" type="button">Yes, Retire</g:dialog_button>
+      </div> 
+	</div>
+
+  	   
+   </g:ui_form>
+ <style>
+      .modal-title{	
+    padding: 9px 0px 9px 0px;
+    padding-left: 9px;
+    margin: -11px;
+    font-size: 12pt;
+    line-height: 26px;
+    background: #000;
+    color: #fff;
+      }
+    .banner.error {
+    background-color: #f5e4e5;
+    border-color: #f5e4e5;
+    color: #ab433e;
+}
+	 .banner{
+		 border: 1px solid #ccc;
+		 border-radius: 4px;
+	padding: 20px 15px;
+	margin-bottom: 20px;
+		 box-sizing: border-box;}
+   </style> 
+</j:jelly>]]></html>
+        <name>retiredCertificate</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-18 07:58:27</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>bf37af7adb35cb00afa1f9961d9619ad</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>retiredCertificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_bf37af7adb35cb00afa1f9961d9619ad</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-01-31 08:03:50</sys_updated_on>
+    </sys_ui_page>
+</record_update>

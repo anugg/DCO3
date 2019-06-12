@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">cat_item=d9eb0a8edb5332000497d450cf96191f^EQ<item display_table="sc_cat_item" display_value="Request a Certificate" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="d9eb0a8edb5332000497d450cf96191f"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Insert Record</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var gr = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+	gr.initialize();
+	gr.requested_item = current.sys_id;
+	gs.info("Request Item: "+ current.sys_id);
+	gr.use_case = current.variable_pool.use_case;
+	gr.certificate_folder = current.variable_pool.certificate_folder;
+	gr.nickname = current.variable_pool.nickname;
+	gr.description_nous = current.variable_pool.description_nous;
+	gr.management_type = current.variable_pool.management_type;
+	gr.contacts = current.variable_pool.contacts;
+	gr.hash_algorithm = current.variable_pool.hash_algorithm;
+	gr.key_strength = current.variable_pool.key_strength;//key Size
+	gr.key_alogrithm = current.variable_pool.key_algorithm;
+	gr.csr_generation = current.variable_pool.csr_generation;
+	gr.enter_csr = current.variable_pool.enter_csr;
+	gr.common_name = current.variable_pool.common_name;
+	gr.organization = current.variable_pool.organization;
+	gr.organization_unit = current.variable_pool.organization_unit;
+	gr.city_locality = current.variable_pool.city_locality;
+	gr.state_province = current.variable_pool.state_province;
+	gr.country = current.variable_pool.country;
+	gr.subject_alternative_names = current.variable_pool.subject_alternative_names;
+	gr.approver_nous = current.variable_pool.approver_nous;
+	gr.alias = current.variable_pool.nickname;
+	gr.requested_for = current.variable_pool.requested_for;
+	gr.assigned_ci = current.variable_pool.assigned_ci;
+	
+	gs.info("Approval== "+current.variable_pool.automatic_renewal);
+	if(current.variable_pool.automatic_renewal == 'Yes' ||current.variable_pool.automatic_renewal == 'yes'){
+		gr.automatic_renewal = 'true';
+	}
+	else if(current.variable_pool.automatic_renewal == 'No' ||current.variable_pool.automatic_renewal == 'no'){
+		gr.automatic_renewal = 'false';
+	}
+	gr.certificate_authority = current.variable_pool.certificate_authority;
+	gr.update();
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-22 09:01:25</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5a0a8c41db6332000497d450cf961956</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Insert Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_5a0a8c41db6332000497d450cf961956</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 07:12:47</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5a0a8c41db6332000497d450cf961956"/>
+</record_update>

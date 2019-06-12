@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var format;
+var certdn;
+var certData;
+var filename;
+var pcbox;
+var sysId = gel(selectedID).value;
+var csr_gen = gel(csrgen).value;
+
+function toggleCertificate(){
+	var e = document.getElementById("certFormat"); //getting dropdown element
+	var selectedVal = e.options[e.selectedIndex].value;
+	var ele = document.getElementById('toggle');
+	var privatechkbox = document.getElementById('ni.privatechkbox');
+	var lblinclude = document.getElementById("lblinclude");
+	var lblchainorder=document.getElementById("lblchainorder");
+	var alias = document.getElementById('alias');
+	var keyStore = document.getElementById('keyStore');
+	var chainOrder = document.getElementById('chainOrder');
+	var confkeyStore = document.getElementById('confkeyStore');
+	var passwordId = document.getElementById('passwordId').value;
+	var conpasswordId=document.getElementById('conpasswordId');
+	var password = document.getElementById('password');
+	var lblfrdlyname = document.getElementById('lblfrdlyname');
+	var conpassword = document.getElementById('conpassword');
+	var privChkBox = document.getElementById('privChkBox');
+	var	blockpswd = document.getElementById('blockpswd');
+	var privKeyChkBox = document.getElementById("ni.privatechkbox");
+	var rootChainChkBox = document.getElementById("rootChainChkBox");
+	var rootchkbox = document.getElementById("ni.rootchkbox");
+	var downloadCert = document.getElementById("downloadCert");
+	var downloadButton = document.getElementById("submit_download_button");
+	
+	
+	pcbox = false;
+	
+	//privChkBox change toggle function
+	function togglePrivChkBox(){
+		if(privKeyChkBox.checked ){
+			blockpswd.style.display = 'block';
+			password.style.display='block';
+			conpassword.style.display='block';
+			pcbox = "true";
+			
+		} else {
+			blockpswd.style.display = 'none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			pcbox = "false";
+		}
+	}
+	privKeyChkBox.addEventListener('change',function(){
+		ele.style.display = 'block';
+		togglePrivChkBox();
+		
+	});
+	
+	
+	// roothcain check box change function
+	function toggleRootChain(){
+		
+		if(rootchkbox.checked && selectedVal != "JKS"){
+			chainOrder.style.display = 'block';
+			
+		} else {
+			chainOrder.style.display = 'none';
+			
+		}
+	}
+	rootchkbox.addEventListener('change',function(){
+		toggleRootChain();
+	});
+	
+	
+	
+	if(selectedVal == "--Select Format--") { // Select Format or DER
+		ele.style.display = 'none';
+		submitbtn.style.display = 'block';
+		downldbtn.style.display = 'none';
+		cancelbtn.style.display = 'none';
+		downloadCert.style.display = 'none';
+		downloadButton.style.display = 'none';
+		
+	}
+	else if(selectedVal == "DER") {//DER
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'block';
+			lblinclude.style.display = 'none';
+			rootChainChkBox.style.display='none';
+			rootchkbox.checked=false;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='none';
+			lblchainorder.style.display='none';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'none';
+			rootChainChkBox.style.display='none';
+			rootchkbox.checked=false;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='none';
+			lblchainorder.style.display='none';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+		
+	}
+	else if(selectedVal == "PKCS#12") { //(PKCS #12)
+		
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'none';
+			lblinclude.style.display = 'none';
+			rootChainChkBox.style.display='none';
+			rootchkbox.checked=false;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='none';
+			lblchainorder.style.display='none';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'none';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='block';
+			privatechkbox.checked=true;
+			privatechkbox.disabled = true;
+			if(privatechkbox.checked == true){
+				pcbox = "true";
+			}
+			else{
+				pcbox = "false";
+			}
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='block';
+			alias.style.display = 'none';
+			blockpswd.style.display='block';
+			password.style.display='block';
+			conpassword.style.display='block';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+	}
+	else if(selectedVal == "JKS") { // JKS
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'block';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'block';
+			confkeyStore.style.display = 'block';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='block';
+			privatechkbox.checked=true;
+			//alert("Checked?"+privatechkbox.checked);
+			privatechkbox.disabled = false;
+			if(privatechkbox.checked == true){
+				pcbox = "true";
+			}
+			else{
+				pcbox = "false";
+			}
+			chainOrder.style.display='none';
+			lblchainorder.style.display='none';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'block';
+			blockpswd.style.display='block';
+			password.style.display='block';
+			conpassword.style.display='block';
+			keyStore.style.display = 'block';
+			confkeyStore.style.display = 'block';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+	}
+	
+	else if(selectedVal == "Base64 (PKCS#8)") { // PEM (PKCS #8)
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='block';
+			privatechkbox.checked=true;
+			//alert("Checked?"+privatechkbox.checked);
+			privatechkbox.disabled = false;
+			if(privatechkbox.checked == true){
+				pcbox = "true";
+			}
+			else{
+				pcbox = "false";
+			}
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='block';
+			password.style.display='block';
+			conpassword.style.display='block';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+		
+	}
+	
+	else if(selectedVal == "Base64") { //"PEM (OpenSSL)")
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='block';
+			privatechkbox.checked=true;
+			//alert("Checked?"+privatechkbox.checked);
+			privatechkbox.disabled = false;
+			if(privatechkbox.checked == true){
+				pcbox = "true";
+			}
+			else{
+				pcbox = "false";
+			}
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='block';
+			password.style.display='block';
+			conpassword.style.display='block';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+	}
+	
+	else if(selectedVal == "PKCS#7") { //PEM (PKCS #7)
+		if(csr_gen == "I will generate my CSR"){
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+			
+			
+		}
+		else{
+			ele.style.display = 'block';
+			lblinclude.style.display = 'block';
+			rootChainChkBox.style.display='block';
+			rootchkbox.checked=true;
+			rootchkbox.disabled=false;
+			privChkBox.style.display='none';
+			privatechkbox.checked=false;
+			privatechkbox.disabled = false;
+			chainOrder.style.display='block';
+			lblchainorder.style.display='block';
+			lblfrdlyname.style.display='none';
+			alias.style.display = 'none';
+			blockpswd.style.display='none';
+			password.style.display='none';
+			conpassword.style.display='none';
+			keyStore.style.display = 'none';
+			confkeyStore.style.display = 'none';
+			
+			submitbtn.style.display = 'block';
+			downldbtn.style.display = 'none';
+			cancelbtn.style.display = 'none';
+			downloadCert.style.display = 'none';
+			downloadButton.style.display = 'none';
+			
+		}
+		
+		
+	}
+	else {
+// 		ele.style.display = 'block';
+// 		alias.style.display = 'block';
+// 		keyStore.style.display = 'block';
+// 		confkeyStore.style.display = 'block';
+// 		password.style.display='block';
+// 		conpassword.style.display='block';
+// 		privatechkbox.disabled = false;
+// 		privChkBox.classList.remove('disabled');
+// 		submitbtn.style.display = 'block';
+// 		downldbtn.style.display = 'none';
+// 		cancelbtn.style.display = 'none';
+// 		downloadCert.style.display = 'none';
+// 		downloadButton.style.display = 'none';
+	}
+	
+}
+
+function hideField(){
+	var value = gel("lblchainorder").value;
+}
+
+function getValues(){//onSubmit of the form
+	if(validateForm() == true){
+		format = gel(certFormat).value;
+		certdn = gel(certDN).value;
+		var passwordId=document.getElementById('passwordId').value;
+		var keystorepwd=document.getElementById('keystorepwd').value;
+		var frndlyname;
+		var gr1 = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+		gr1.addQuery('sys_id', sysId);
+		gr1.query();
+		while(gr1.next()){
+			frndlyname = gr1.nickname;
+		}
+		var ga = new GlideAjax('NousRetrieveCertificate');
+		ga.addParam('sysparm_name','retrieveCertificate');
+		
+		if((certdn == '')||(certdn == 'undefined'))
+		{
+			
+			alert('Unable to download the certificate due to incorrect folder path');
+			return false();
+			
+		}
+		else {				
+			ga.addParam('sysparm_certdn', certdn);
+			alert('Please wait,It will take few seconds');
+			
+		}
+		
+		ga.addParam('sysparm_format', format);
+		ga.addParam('sysparm_includePrivateKey', pcbox);
+		ga.addParam('sysparm_privateKeyPassword', passwordId);
+		ga.addParam('sysparm_keystore',keystorepwd);
+		ga.addParam('sysparm_frdlyname',frndlyname);
+		ga.getXML(ajaxResponse);
+		
+		var submitbtn = document.getElementById('submitbtn');
+		var downldbtn = document.getElementById('downldbtn');
+		var cancelbtn = document.getElementById('cancelbtn');
+		var downloadCert = document.getElementById("downloadCert");
+		var downloadButton = document.getElementById("submit_download_button");
+		
+		submitbtn.style.display = 'none';
+		downldbtn.style.display = 'block';
+		cancelbtn.style.display = 'block';
+		downloadCert.style.display = 'none';
+		downloadButton.style.display = 'none';
+	}
+	
+}
+
+
+function ajaxResponse(response) {
+	
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	if((answer == '')||(answer == 'undefined'))
+		{
+			
+			alert('Certificate DownLoad Error');
+			return false;
+				}
+				
+	var result = answer.split('||');
+	 certData = result[1];
+	 filename = result[0];
+	
+	var submitbtn = document.getElementById('submitbtn');
+	var downldbtn = document.getElementById('downldbtn');
+	var cancelbtn = document.getElementById('cancelbtn');
+	var downloadButton = document.getElementById("submit_download_button");
+	submitbtn.style.display = 'none';
+	downldbtn.style.display = 'inline-block';
+	cancelbtn.style.display = 'inline-block';
+	downloadButton.style.display = 'block';
+	
+	var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+	gr.addQuery('sys_id', sysId);
+	gr.query();
+	if(gr.next()){
+		gr.certificate_date = certData;
+		gr.file_name = filename;
+		gr.chain_order = gel(chainorderId).value;
+		//gr.alias = gel(aliasId).value;
+		//gr.certificate_friendly_name = gel(friendlyname).value;
+		//.password = gel(passwordId).value;
+		//gr.confirm_password = gel(conpasswordId).value;
+		//gr.keystore_password = gel(keystorepwd).value;
+		//gr.confirm_keystore_password = gel(conkeystorepwd).value;
+		
+	if((certData == '')||(certData == undefined)||(certData =='NULL'))
+		{
+			alert('The certificate Data is not proper. Please retry the Download process for a valid Certificate');
+			
+		}
+	gr.update();
+	
+}
+}
+function downloadCertificate(){
+	var sysId = gel(selectedID).value;
+		//window.location= 'x_nouin_nousvenafi_certificate.do?sysparm_sys_id=' + sysId +'&sysparm_certificate='+certData+'&sysparm_fname='+filename;
+	
+	window.location= 'x_nouin_nousvenafi_certificate.do?sysparm_sys_id=' + sysId +'&sysparm_certificate='+certData+'&sysparm_fname='+filename+'&sysparm_ck='+g_ck;
+	GlideDialogWindow.get().destroy();
+	
+}
+//Cancel button
+function cancelButton() {
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+
+function checkPassword(val){
+	
+	var password = document.getElementById('passwordId').value;
+	var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,14}/;
+		var valid = regex.test(password);
+		if(valid){
+			document.getElementById('pwdError').style.display="none";
+			document.getElementById('passwordId').style.borderColor = "rgb(238, 238, 238)";
+		} else {
+			
+			document.getElementById('pwdError').style.display="block";
+			document.getElementById('passwordId').style.borderColor = "red";
+		}
+	}
+	
+	function checkcPassword(val){
+		
+		var conpassword = document.getElementById('conpasswordId').value;
+		var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,14}/;
+			var valid = regex.test(conpassword);
+			if(valid){
+				document.getElementById('cpwdError').style.display="none";
+				document.getElementById('conpasswordId').style.borderColor = "rgb(238, 238, 238)";
+			} else {
+				
+				document.getElementById('cpwdError').style.display="block";
+				document.getElementById('conpasswordId').style.borderColor = "red";
+			}
+		}
+		
+		function checkJKSPassword(val){
+			
+			var JKSPassword = document.getElementById('keystorepwd').value;
+			var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,14}/;
+				var valid = regex.test(JKSPassword);
+				if(valid){
+					document.getElementById('jkspwdError').style.display="none";
+					document.getElementById('keystorepwd').style.borderColor = "rgb(238, 238, 238)";
+				} else {
+					
+					document.getElementById('jkspwdError').style.display="block";
+					document.getElementById('keystorepwd').style.borderColor = "red";
+				}
+			}
+			
+			function checkJKSCPassword(val){
+				
+				var conJKSPassword = document.getElementById('conkeystorepwd').value;
+				var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,14}/;
+					var valid = regex.test(conJKSPassword);
+					if(valid){
+						document.getElementById('cjkspwdError').style.display="none";
+						document.getElementById('conkeystorepwd').style.borderColor = "rgb(238, 238, 238)";
+					} else {
+						
+						document.getElementById('cjkspwdError').style.display="block";
+						document.getElementById('conkeystorepwd').style.borderColor = "red";
+					}
+				}
+				
+				
+				function validateForm()
+				{
+					format = gel(certFormat).value;
+						if((format == "DER") || (format == "PKCS#7")){
+						
+						return true;
+					}
+					else {
+						var password = document.getElementById('passwordId').value;
+						var conpassword = document.getElementById('conpasswordId').value;
+						var keystorepwd = document.getElementById('keystorepwd').value;
+						var conkeystorepwd = document.getElementById('conkeystorepwd').value;
+						//var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/;
+						var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,14}/;
+							var valid = regex.test(password);
+							var jksvalid = regex.test(keystorepwd);
+							if(format == "Base64 (PKCS#8)" || format == "PKCS#12" || format == "Base64" || format == "JKS"){
+								
+								if(pcbox=="true"){
+									
+									if(password == '' || conpassword=='' || (password.length < 12)){
+										document.getElementById('pwdError').style.display="block";
+										document.getElementById('passwordId').style.borderColor = "red";
+										document.getElementById('cpwdError').style.display="block";
+										document.getElementById('conpasswordId').style.borderColor = "red";
+										return false;
+									} else {
+										document.getElementById('passwordId').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('conpasswordId').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('pwdError').style.display="none";
+										document.getElementById('cpwdError').style.display="none";
+										
+										if (password == conpassword){
+											return true;
+										}
+										else{
+											return false;
+										}
+										
+										
+									}
+								}
+								else{
+									return true;
+								}
+							}
+							
+							
+							else {
+								
+								if (password == '' || conpassword==''|| keystorepwd==''|| conkeystorepwd==''|| (password.length < 12)) {
+									
+									document.getElementById('pwdError').style.display="block";
+									document.getElementById('passwordId').style.borderColor = "red";
+									document.getElementById('cpwdError').style.display="block";
+									
+									document.getElementById('conpasswordId').style.borderColor = "red";
+									document.getElementById('jkspwdError').style.display="block";
+									
+									document.getElementById('keystorepwd').style.borderColor = "red";
+									document.getElementById('cjkspwdError').style.display="block";
+									
+									document.getElementById('conkeystorepwd').style.borderColor = "red";
+									if (!jksvalid && !valid){
+										
+										return false;
+									}
+									else {
+										
+										document.getElementById('passwordId').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('conpasswordId').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('keystorepwd').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('conkeystorepwd').style.borderColor = "rgb(238, 238, 238)";
+										document.getElementById('pwdError').style.display="none";
+										document.getElementById('cpwdError').style.display="none";
+										document.getElementById('jkspwdError').style.display = "none";
+										document.getElementById('cjkspwdError').style.display="none";
+										
+										return true;
+									}
+								}
+								
+								
+								else {
+									document.getElementById('passwordId').style.borderColor = "rgb(238, 238, 238)";
+									document.getElementById('conpasswordId').style.borderColor = "rgb(238, 238, 238)";
+									document.getElementById('keystorepwd').style.borderColor = "rgb(238, 238, 238)";
+									document.getElementById('conkeystorepwd').style.borderColor = "rgb(238, 238, 238)";
+									document.getElementById('pwdError').style.display="none";
+									document.getElementById('cpwdError').style.display="none";
+									document.getElementById('jkspwdError').style.display = "none";
+									document.getElementById('cjkspwdError').style.display="none";
+									
+									return true;
+								}
+							}
+						}
+					}
+					
+					function checkPasswordMatch() {
+						var password = document.getElementById('passwordId').value;
+						var conpassword = document.getElementById('conpasswordId').value;
+						
+						if(password == conpassword){
+							//alert("password and confirmed password both are match!!");
+							return true;
+						}
+						
+						else{
+							alert("Password mismatch!!!Please Re-enter, Confirm Password must match with Password");
+							
+							submitbtn.style.display = 'block';
+							downldbtn.style.display = 'none';
+							cancelbtn.style.display = 'none';
+							document.getElementById('cpwdError').style.display="block";
+				            document.getElementById('conpasswordId').style.borderColor = "red";
+							return false;
+						}
+						
+					}
+					function checkJKSPasswordMatch(){
+						var keystorepwd = document.getElementById('keystorepwd').value;
+						var conkeystorepwd = document.getElementById('conkeystorepwd').value;
+						if (keystorepwd == conkeystorepwd)
+							{
+							//alert("JKSpassword and confirm JKS password are simillar");
+							
+							document.getElementById('jkspwdError').style.display = "none";
+							document.getElementById('cjkspwdError').style.display="none";
+							downldbtn.style.display = 'block';
+							cancelbtn.style.display = 'block';
+							return true;
+						}else{
+							alert("JKS password mismatch!!!Please Re-enter,JKS Confirm Password must match with JKS password");
+							submitbtn.style.display = 'block';
+							downldbtn.style.display = 'none';
+							cancelbtn.style.display = 'none';
+						    document.getElementById('cjkspwdError').style.display="block";
+						    document.getElementById('conkeystorepwd').style.borderColor = "red";
+							return false;
+						}
+					}
+					
+					
+					
+					function passwordFocus(x){
+						var pwdMsg = document.getElementById('pwdMsg');
+						x.style.background = "grey";
+						pwdMsg.style.display = "block";
+						
+					}
+					function passwordBlur(x){
+						var pwdMsg = document.getElementById('pwdMsg');
+						x.style.background = "white";
+						pwdMsg.style.display = "none";
+						
+					}
+					
+					function removePswMsg(){
+						var pwdMsg = document.getElementById('pwdMsg');
+						var pwdError = document.getElementById('pwdMsg');
+						pwdError.hide();
+					}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_download_certificate.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   <g:ui_form>
+      <input type="hidden" id="cancelled" name="cancelled" value="false"/>
+      <input type="hidden" id="selectedID" name="selectedID" value="${sysparm_sysID}"/>
+      <input type="hidden" id="certDN" name="certDN" value="${sysparm_cDN}"/>
+	   <input type="hidden" id="csrgen" name="csrgen" value="${sysparm_csr_generation}"/>
+	     <!-- <set the certificate formats in drop down list for download> -->
+      <div>
+         <div>
+            <label style="display: block;">Format</label>
+            <g2:evaluate var="jvar_gr" object="true">
+               var gr = new GlideRecord('x_nouin_nousvenafi_certificate_format');
+				 gr.addQuery('active_foramt','=','true'); 
+               gr.query();
+              gr; 
+            </g2:evaluate>
+            <p><select id="certFormat" name="certFormat" onchange="toggleCertificate()">
+               <option>--Select Format--</option>
+               <j2:while test="$[jvar_gr.next()]">
+                  <option value="$[jvar_gr.getValue('format_value')]">$[jvar_gr.getValue('format_name')]</option>
+               </j2:while>
+				</select></p>
+         <!-- Extra fields should be displayed based on format -->
+         <div id="toggle" style="display: none;">
+            <div class="also" id="lblinclude">
+				<label style="display: block;">Also Include:</label>
+               <div id="rootChainChkBox" >
+                  <g:ui_checkbox name="rootchkbox" id="rootchkbox" value="" checked="true"/>
+                  <label>Root Chain</label>
+               </div>
+               <div id="privChkBox">
+                 <g:ui_checkbox  name="privatechkbox" value="false" onmouseover="this.disabled=false"/>
+                  <label>Private Key</label>
+               </div>
+            </div><br/><br/>
+            <div id="chainOrder" style="display: none;">
+               <label style="display: block;" id='lblchainorder' value="true">Chain Order</label>
+               <p><select  id="chainorderId" name="chainorder" onChange="hideField()">
+                  <option value="End-Entity First">End Entity First</option>
+                  <option value="Root First">Root First</option>
+				   </select></p>
+            </div>
+			 <j:set var="jvar_records" value="${sysparm_sysID}"/>
+			 <g:evaluate var="jvar_records" jelly="true" object="true">  
+            var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+            gr.addQuery('sys_id', "${jvar_records}");
+            gr.query();
+            gr;
+         </g:evaluate>
+			  <j:while test="${jvar_records.next()}">
+            <div id='lblfrdlyname' style="display: none;">
+               <label style="display: block;">Certificate Friendly Name</label>
+               <input type="text"  id="friendlyname" name="friendlyname" value="${jvar_records.getValue('nickname')}"/>
+            </div><br/>
+            <div id="alias" style="display: none;">
+               <label style="display: block;">Alias</label>
+               <input type="text" id="aliasId" name="alias" value="${jvar_records.getValue('alias')}"/>
+            </div >
+				   </j:while>
+            <div id="blockpswd" style="display: block;">
+               <div id="password">
+                  <label style="display: block;">Password</label>
+                  <input type="password" id="passwordId" onkeyup="checkPassword(this)" name="password" value = "" onfocus="passwordFocus(this)" onblur="passwordBlur(this)" onmousedown="removePswMsg()"/>
+				   
+				   <p id="pwdError" style="display: none;">Please Enter Valid Password!!</p>
+               </div>
+				<div id="pwdMsg" type="hidden" class="hideMsg errMsg">Password must have at least 
+					<ul>
+						<li>12 charaters</li>
+						<li>3 of the following:</li>
+						<li>1 uppercase letter</li>
+						<li>1 lowercase letter</li>
+						<li>1 number</li>
+						<li>1 special character</li>
+					</ul>
+						</div>
+               <div id="conpassword">
+                  <label style="display: block;">Confirm Password</label>
+                  <input type="password" id="conpasswordId" onkeyup="checkcPassword(this)" name="conpassword" value = "" onfocus="passwordFocus(this)" onblur="passwordBlur(this)" onmousedown="removePswMsg()" onChange="checkPasswordMatch();return false;"/> 
+	<!-- <input type="password" id="conpasswordId" name="conpassword" value ="" onChange="checkPasswordMatch();return false;"/> -->				  
+				   <p id="cpwdError" style="display: none;">Please Enter Valid ConfirmPassword!!</p>
+				   <div id="pwdMsg1" type="hidden" class="hideMsg errMsg">Confirm Password must match with Password</div>
+               </div>
+            </div>
+               <div id="keyStore" style="display: none;">
+      <label style="display: block;">Keystore Password</label>
+<!-- <input type="password" id="keystorepwd" name="keystorepwd" value="" onfocus="passwordFocus(this)" onblur="passwordBlur(this)"/> -->
+				   
+				    <input type="password" id="keystorepwd" onkeyup="checkJKSPassword(this)" name="keystorepwd" value = "" onfocus="passwordFocus(this)" onblur="passwordBlur(this)" onmousedown="removePswMsg()"/>
+				   
+				   <p id="jkspwdError" style="display: none;">Please Enter Valid JKSPassword!!</p>
+               </div>
+				<div id="pwdMsg" type="hidden" class="hideMsg errMsg">KeyStore Password must have at least 
+					<ul>
+						<li>12 charaters</li>
+						<li>3 of the following:</li>
+						<li>1 uppercase letter</li>
+						<li>1 lowercase letter</li>
+						<li>1 number</li>
+						<li>1 special character</li>
+					</ul>
+						</div>
+               <div id="confkeyStore" style="display: none;">
+          <label style="display: block;">Confirm Keystore Password</label>
+	       <input type="password" id="conkeystorepwd" name="conkeystorepwd" value ="" onkeyup="checkJKSCPassword(this)" onfocus="passwordFocus(this)" onblur="passwordBlur(this)" onmousedown="removePswMsg()" onChange="checkJKSPasswordMatch();return false;"/>
+				<p id="cjkspwdError" style="display: none;">Please Enter valid confirm keystorepassword!!</p>																			 
+				</div>
+            
+		  	 	  	 <div id="submitbtn" style="float:left;">
+              		 <g:dialog_button style="color:#ffffff;background:#278efc" onclick="getValues()" type="button">Submit Details</g:dialog_button>
+         </div>
+         </div>
+			  </div>
+	
+      </div>
+      <!-- Certificate Data and file name -->
+      <div id="downloadCert" style="display: none;">
+         <div id="textarea">
+            <label id="lbltext" style="display: block;">Certificate</label>
+            <textarea name="certificateData" id="certificateData" rows="10" cols="50" value="">
+            </textarea>
+         </div>
+        
+      </div> 
+      <!--  Cancel & Download button -->
+	       <div  id="submit_download_button" style="display: none;">
+         
+        
+		  <div id="cancelbtn" class="">
+            <g:dialog_button style="color:#ffffff;background:#278efc" onclick="cancelButton()" type="button" margin-right="900px">Cancel</g:dialog_button>
+         </div>
+		   <div id="downldbtn" class="">
+            <g:dialog_button style="color:#ffffff;background:#278efc" onclick="downloadCertificate()" type="button">Download</g:dialog_button>
+         </div>
+    </div>
+      
+   </g:ui_form>
+   <script type="text/javascript">
+      window.onload = function(e){
+       if(toggleCertificate){
+       	toggleCertificate();
+       }
+       } 
+       </script> 
+	<style>
+		
+		#certificateData{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		min-height: 100px;
+		max-height: 300px;
+		margin-top: -31px;
+		height  : 263px;
+		max-height: 300px;
+		max-width: 329px;
+		
+        }
+		
+		#lbltext{font-weight: normal;
+		position: fixed;
+		margin-top: -54px;
+		font-size: 13px;
+		}
+		
+		.modal-header{	
+		padding: 10px;
+		background: #000;
+		color: #fff;
+	}
+		<!-- #chainOrder{
+		float:left;
+		} -->
+
+		#blockpswd{
+			position:relative;
+		}
+		.hideMsg{
+			display:none;
+		}
+		#pwdMsg{
+			position: absolute;
+			right: -40%;
+			bottom: 0;
+			top: 0px;
+		}
+		#downloadCert{
+			width: 20%;
+			margin: 0 auto;
+		}
+		#toggle{
+		    float: left;
+			width: 40%;
+		}
+		
+		#submitbtn{
+			float: left;
+			display: block;
+			position: fixed;
+			bottom: 10px;
+			border-top: 1px solid #e5e5e5;
+			width: 100%;
+			left: 0px;
+			padding: 10px 10px 0px 10px;
+		}
+		.hideMsg ul{
+		    margin-bottom: 50px;
+		    background: #f5e8e8;
+			/* height: 100%; */
+			/* border: 1px solid #791616; */
+			box-shadow: 1px 1px 1px;
+			-webkit-box-shadow: 1px 2px 11px -1px rgba(84,83,87,1);
+			-moz-box-shadow: 1px 2px 11px -1px rgba(84,83,87,1);
+			box-shadow: 1px 2px 11px -1px rgba(84,83,87,1);
+		}
+		.modal-dialog.modal-md .modal-body{
+			padding: 25px;
+			max-height: 400px;
+			overflow: auto;
+			margin-bottom: 40px;
+		}
+		#submit_download_button{
+			
+			bottom: 25px;
+			width: 100%;
+			float: left;
+			left: 0px;
+			text-align: center;
+			position: fixed;
+			bottom: 10px;
+		}
+		#submit_download_button .btn{
+		    display: inline-block;
+		    margin-left: 428px;
+		}
+		<!-- #cancelbtn{
+		    
+		margin-right: 10px;
+
+		} -->
+		#cancelbtn{
+		margin-left: -68px;
+		margin-bottom: -84px;
+		position: absolute;
+         }
+		
+				input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="radio"].disabled, input[type="checkbox"].disabled, fieldset[disabled] input[type="radio"], fieldset[disabled] input[type="checkbox"] {
+    cursor: not-allowed;
+}
+		#privChkBox.disabled .checkbox-label{
+			cursor: not-allowed;
+		}
+		#privChkBox{
+		cursor: not-allowed;
+		}
+		#rootChainChkBox{
+		    display: block;
+			float:left;
+			value:true;
+		}
+		#rootchkbox{value:true;}
+		#pwdError{color: red}
+		#cpwdError{color: red}
+		#jkspwdError{color: red}
+		#cjkspwdError{color: red}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(e){
+		if(toggleCertificate){
+			toggleCertificate();
+		}
+		
+		}
+		
+	</script>
+</j:jelly>]]></html>
+        <name>download_certificate</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-30 06:55:23</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>ead934a3db2332000497d450cf961989</sys_id>
+        <sys_mod_count>726</sys_mod_count>
+        <sys_name>download_certificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_ead934a3db2332000497d450cf961989</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-12-13 06:17:25</sys_updated_on>
+    </sys_ui_page>
+</record_update>

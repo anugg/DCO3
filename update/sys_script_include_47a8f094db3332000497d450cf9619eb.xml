@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_nouin_nousvenafi.Nous_RenewCertificate</api_name>
+        <client_callable>true</client_callable>
+        <description>This script makes a post call to renew certificates.</description>
+        <name>Nous_RenewCertificate</name>
+        <script><![CDATA[var Nous_RenewCertificate = Class.create();
+Nous_RenewCertificate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	renewCertificate: function(){
+		var x = new Nous_GetAPIKey();
+		var apiKey = x.getValidAPIKey();
+		var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+		var certificateDN;
+		var guid;
+		var renewalSysId;
+		var restMessage;
+		
+		var selectedID = this.getParameter('sysparm_id');
+		//gs.info("SYSID in Renewal SI:"+selectedID);
+		
+		var gr = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+		gr.addQuery('sys_id', selectedID);
+		gr.query();
+		while(gr.next()){
+			certificateDN = gr.getValue('certificate_dn');
+			guid = gr.getValue('guid');
+			//gs.info("certificateDN in Renewal SI:"+certificateDN);
+			//gs.info("guid in Renewal SI:"+guid);
+			var gr1 = new GlideRecordSecure('x_nouin_nousvenafi_certificate_renewal_history');
+				gr1.initialize();
+				gr1.certificate_request = selectedID;
+				//gs.info("Previous Valid From:"+gr.getValue('certificate_valid_from'));
+				//gs.info("Previous Valid To:"+gr.getValue('certificate_valid_to'));
+				gr1.previous_valid_from = gr.getValue('certificate_valid_from');
+				gr1.previous_valid_to = gr.getValue('certificate_valid_to');
+				//gs.info("Previous Valid From:"+gr1.previous_valid_from);
+				//gs.info("Previous Valid To:"+gr1.previous_valid_to);
+				renewalSysId = gr1.insert();
+		}
+		
+		var payload = {"CertificateDN": String(certificateDN)};
+			var json = JSON.stringify(payload);
+			try{
+		    restMessage = new sn_ws.RESTMessageV2(); //Rest Call to Venafi
+			restMessage.setHttpMethod("POST");
+			restMessage.setEndpoint(gs.getProperty('x_nouin_nousvenafi.venafi_url')+"certificates/renew");
+			//restMessage.setEndpoint("x_nouin_nousvenafi.venafi_url/certificates/renew");
+			restMessage.setRequestHeader('Content-Type','application/json');
+			restMessage.setRequestHeader('X-Venafi-Api-Key', apiKey);
+			restMessage.setRequestBody(json);
+			restMessage.setMIDServer(mid_server);
+			restMessage.setEccParameter('skip_sensor',true);
+			
+			var response = restMessage.execute();
+			var responseBody = response.getBody();
+			gs.info("Renewal Response:"+responseBody);
+			var objJSON = JSON.parse(responseBody);
+			
+			if(objJSON.Success == true){
+				var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+				var urlNew = url+'certificates'+'/'+guid;
+				var responseBody1;
+				var validTo;
+				var validFrom;
+				var status;
+				
+				
+				//gs.info("URL in Renewal SI:"+urlNew);
+				//gs.info("ApiKey Renewal SI:"+apiKey);
+				
+				
+				var r = new sn_ws.RESTMessageV2();
+					r.setEndpoint(urlNew);
+					r.setHttpMethod("GET");
+					r.setRequestHeader('Content-Type','application/json');
+					r.setRequestHeader('X-Venafi-Api-Key', apiKey);
+					r.setMIDServer(mid_server);
+					r.setEccParameter('skip_sensor',true);
+				var response1 = r.execute();
+					response1.waitForResponse(2000);
+					responseBody1 = response1.getBody();
+					gs.info("Response in Renewal SI:" + responseBody1);
+				
+				var objJSON1 = JSON.parse(responseBody1);
+					validTo = objJSON1.CertificateDetails.ValidTo;
+					validFrom = objJSON1.CertificateDetails.ValidFrom;
+// 					gs.info("ValidTo in Renewal SI:"+validTo);
+// 					gs.info("ValidFrom in Renewal SI:"+validFrom);
+				gs.info("status for renewal" +objJSON1.ProcessingDetails.Status);
+				status=objJSON1.ProcessingDetails.Status;
+				
+					var gr2 = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+						gr2.addQuery('sys_id', selectedID);
+						gr2.query();
+						while(gr2.next()){
+// 							var valid_frm = new GlideDateTime(validFrom);
+// 							valid_frm.addYearsUTC(1);
+// 							var valid_to = new GlideDateTime(validTo);
+// 							valid_to.addYearsUTC(1);
+							gr2.certificate_valid_to = objJSON1.CertificateDetails.ValidTo;
+							gr2.certificate_valid_from = objJSON1.CertificateDetails.ValidFrom;
+							gr2.status=status;
+// 							gr2.certificate_valid_to = validTo;
+// 							gr2.certificate_valid_from = validFrom;
+							gr2.update();
+							//gs.info("Current Sys ID:"+current.sys_id);
+							//gs.info("Selected ID:"+selectedID);
+							var gr3 = new GlideRecord('x_nouin_nousvenafi_certificate_renewal_history');
+								gr3.addQuery('sys_id',renewalSysId);
+								gr3.query();
+							while(gr3.next()){
+// 								gs.info("Inside Renewal History table update1");
+								gr3.initialize();
+								gr3.renewed_valid_from = objJSON1.CertificateDetails.ValidFrom;
+								gr3.renewed_valid_to = objJSON1.CertificateDetails.ValidTo;
+// 								gr3.renewed_valid_from = validFrom;
+// 								gr3.renewed_valid_to = validTo;
+								gr3.renewed_by = gs.getUserName();
+								//gr3.status = 'Successfully Renewed.';
+								gr3.status=status;
+								gr3.response = objJSON;
+								gr3.update();
+// 								gs.info("Inside Renewal History table update2");
+						}
+					}
+				}
+		else
+			{
+					var gr4 = new GlideRecord('x_nouin_nousvenafi_certificate_renewal_history');
+						gr4.addQuery('sys_id',renewalSysId);
+						gr4.query();
+					while(gr4.next()){
+						gr4.renewed_valid_from = '';
+						gr4.renewed_valid_to = '';
+						gr4.renewed_by = gs.getUserName();
+						gr4.status = 'Renewal Failed.';
+						gr4.response = objJSON;
+						gr4.update();
+				}
+			}
+			return responseBody +'||'+ renewalSysId;
+			}
+		catch(ex) {
+	responseBody = ex.getMessage();
+	status = '500';
+} finally {
+	requestBody = restMessage ? restMessage.getRequestBody():null;
+}
+		},
+	
+// 	renewCertificateValidation: function(){
+// 		var certStatus='';
+// 		var selectedID = this.getParameter('sysparm_id');
+// 		var cert = new GlideRecordSecure('x_nouin_nousvenafi_certificate_rqst');
+// 		cert.addQuery('sys_id', selectedID);
+// 		cert.query();
+// 		if(cert.next()){
+// 				certStatus=cert.status;
+// 		}
+// 		return certStatus;
+		
+// 	},
+	
+		
+		type: 'Nous_RenewCertificate'
+	});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-02 14:54:04</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>47a8f094db3332000497d450cf9619eb</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_name>Nous_RenewCertificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_include_47a8f094db3332000497d450cf9619eb</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 06:53:41</sys_updated_on>
+    </sys_script_include>
+</record_update>

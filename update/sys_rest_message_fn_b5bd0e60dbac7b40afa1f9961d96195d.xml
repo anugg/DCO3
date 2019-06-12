@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile display_value="Rest Auth">a71d0f1bdbc47b406ff7fd741d9619b1</basic_auth_profile>
+        <basic_auth_user/>
+        <content>{"CertificateDN":"\\VED\\Policy\\Administration\\Venafi Operational Certificates\\i-0280b7e0bab573987","Format":"Base64 (PKCS#8)","Password":"Ommuruga100!JGD","IncludePrivateKey":"false","FriendlyName":"i-0280b7e0bab573987","KeystorePassword":""}</content>
+        <function_name>download certificate</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Retrive Certificate Download [ download certificate ]</qualified_name>
+        <rest_endpoint>https://10.0.0.126/VEDSDK/certificates/retrieve</rest_endpoint>
+        <rest_message display_value="Retrive Certificate Download">7aacc660dbac7b40afa1f9961d961997</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-03-29 10:54:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b5bd0e60dbac7b40afa1f9961d96195d</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>download certificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_b5bd0e60dbac7b40afa1f9961d96195d</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-22 06:58:36</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server display_value="Venafi AWS dev35307">6cf6ef33dbd50300f74bf3d51d96199d</use_mid_server>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

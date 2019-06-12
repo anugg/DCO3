@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_lists">
+    <content_block_lists action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame display_value="frame_rounded_corners">8ce268dc0a0a0b12003a73854be4157d</frame>
+        <logged_on>false</logged_on>
+        <maximum_entries>5</maximum_entries>
+        <name>Certificate Form</name>
+        <omit_if_empty>false</omit_if_empty>
+        <order>active</order>
+        <order_direction>asc</order_direction>
+        <query/>
+        <script/>
+        <sys_class_name>content_block_lists</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-08 12:39:06</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>00c53ce8db5732000497d450cf9619a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Certificate Form</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>content_block_lists_00c53ce8db5732000497d450cf9619a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-08 12:39:06</sys_updated_on>
+        <table>x_nouin_nousvenafi_certificate_request</table>
+        <title/>
+        <type display_value="catalog_item_grid">716b9da8eff02000914304167b22568c</type>
+    </content_block_lists>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Request a Certificate">d9eb0a8edb5332000497d450cf96191f</catalog_item>
+        <catalog_variable>IO:fa58a10adb34f700afa1f9961d961953</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-04-02 07:20:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b8030ab9db64bb806ff7fd741d9619d1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>subject_alternative_names_dns</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_b8030ab9db64bb806ff7fd741d9619d1</sys_update_name>
+        <sys_updated_by>jagdish.m</sys_updated_by>
+        <sys_updated_on>2019-04-15 10:53:40</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Set SAN Field Visibility-DNS">b9e28e79db64bb806ff7fd741d96195a</ui_policy>
+        <variable>subject_alternative_names_dns</variable>
+        <variable_set/>
+        <visible>true</visible>
+    </catalog_ui_policy_action>
+</record_update>

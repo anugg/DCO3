@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2019-06-12 06:22:06">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout display_value="layout_3_across_only">4127db33d7111100f2d224837e610336</layout>
+        <order>3011</order>
+        <read_roles>x_nouin_nousvenafi.certificate_authority_user,x_nouin_nousvenafi.certificate_format_user,x_nouin_nousvenafi.certificate_renewal_history_user,x_nouin_nousvenafi.policy_user,x_nouin_nousvenafi.venafi_user</read_roles>
+        <roles/>
+        <selectable>true</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-11 08:03:57</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0ac23d47dbbb32000497d450cf961984</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Digital Certificate Organizer</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_portal_page_0ac23d47dbbb32000497d450cf961984</sys_update_name>
+        <sys_updated_by>Praveen.k</sys_updated_by>
+        <sys_updated_on>2018-12-12 06:40:54</sys_updated_on>
+        <title>Digital Certificate Organizer</title>
+        <user/>
+        <view>nous_venafi_platform</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>0</offset>
+                <page display_value="Digital Certificate Organizer">0ac23d47dbbb32000497d450cf961984</page>
+                <summary/>
+                <sys_created_by>Praveen.k</sys_created_by>
+                <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                <sys_id>00fbabd0dbb4f300afa1f9961d961982</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>Praveen.k</sys_updated_by>
+                <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>00fbabd0dbb4f300afa1f9961d961983</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>04fbabd0dbb4f300afa1f9961d961983</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>08fbabd0dbb4f300afa1f9961d961982</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>08fbabd0dbb4f300afa1f9961d961983</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>Pending Approval List</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>0cfbabd0dbb4f300afa1f9961d961982</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>80fbabd0dbb4f300afa1f9961d961982</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>8a885a31db1a63c0afa1f9961d96196c</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">00fbabd0dbb4f300afa1f9961d961982</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>8cfbabd0dbb4f300afa1f9961d961983</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>0ac23d47dbbb32000497d450cf961984</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>0</offset>
+                <page display_value="Digital Certificate Organizer">0ac23d47dbbb32000497d450cf961984</page>
+                <summary/>
+                <sys_created_by>Praveen.k</sys_created_by>
+                <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                <sys_id>48fbabd0dbb4f300afa1f9961d961961</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>Praveen.k</sys_updated_by>
+                <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link_class</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>40fbabd0dbb4f300afa1f9961d961963</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>category_title_link</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>render_title</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>44fbabd0dbb4f300afa1f9961d961962</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>44fbabd0dbb4f300afa1f9961d96197d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>0ac23d47dbbb32000497d450cf961984</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>48fbabd0dbb4f300afa1f9961d961962</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>com.glideapp.servicecatalog.RenderCategory</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>4cfbabd0dbb4f300afa1f9961d961962</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>c0fbabd0dbb4f300afa1f9961d96197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>com.glideapp.servicecatalog_category_view.do?v=1&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;sysparm_parent=bafb0a8edb5332000497d450cf9619f7&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;sysparm_catalog=e0d08b13c3330100c8b837659bba8fb4&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;sysparm_catalog_view=catalog_default</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>type</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>c4fbabd0dbb4f300afa1f9961d96197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>category</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>macro</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>c8fbabd0dbb4f300afa1f9961d961961</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>sc_catalog_homepage_category_list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog_view</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>c8fbabd0dbb4f300afa1f9961d96197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>catalog_default</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>ccfbabd0dbb4f300afa1f9961d961961</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>bafb0a8edb5332000497d450cf9619f7</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">48fbabd0dbb4f300afa1f9961d961961</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>ccfbabd0dbb4f300afa1f9961d96197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>&amp;lt;a onmousedown='Event.stop(event); return false;' class='category_title_link' href='com.glideapp.servicecatalog_category_view.do?v=1&amp;amp;sysparm_parent=bafb0a8edb5332000497d450cf9619f7&amp;amp;sysparm_catalog=e0d08b13c3330100c8b837659bba8fb4&amp;amp;sysparm_catalog_view=catalog_default'&amp;gt;Certificate Catalog&amp;lt;/a&amp;gt;</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>2</offset>
+                <page display_value="Digital Certificate Organizer">0ac23d47dbbb32000497d450cf961984</page>
+                <summary/>
+                <sys_created_by>Praveen.k</sys_created_by>
+                <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                <sys_id>4cfbabd0dbb4f300afa1f9961d96197f</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>Praveen.k</sys_updated_by>
+                <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>40fbabd0dbb4f300afa1f9961d961981</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>44fbabd0dbb4f300afa1f9961d961980</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>44fbabd0dbb4f300afa1f9961d961981</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>Certificate Requests Expiring within 30 Days</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>48fbabd0dbb4f300afa1f9961d961980</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>4cfbabd0dbb4f300afa1f9961d961980</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>c8fbabd0dbb4f300afa1f9961d961981</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>0ac23d47dbbb32000497d450cf961984</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">4cfbabd0dbb4f300afa1f9961d96197f</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>ccfbabd0dbb4f300afa1f9961d96197f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>1cc2afd1db8543000497d450cf96195f</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>1</offset>
+                <page display_value="Digital Certificate Organizer">0ac23d47dbbb32000497d450cf961984</page>
+                <summary/>
+                <sys_created_by>Praveen.k</sys_created_by>
+                <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                <sys_id>88fbabd0dbb4f300afa1f9961d96197d</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>Praveen.k</sys_updated_by>
+                <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>08fbabd0dbb4f300afa1f9961d96197f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>0ac23d47dbbb32000497d450cf961984</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>0cfbabd0dbb4f300afa1f9961d96197d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>2e8c5acadb92eb406ff7fd741d9619d1</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>80fbabd0dbb4f300afa1f9961d96197e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>80fbabd0dbb4f300afa1f9961d96197f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>Requested item in process</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>84fbabd0dbb4f300afa1f9961d96197e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>88fbabd0dbb4f300afa1f9961d96197e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-10 02:23:43">88fbabd0dbb4f300afa1f9961d96197d</portal_section>
+                        <sys_created_by>Praveen.k</sys_created_by>
+                        <sys_created_on>2019-04-10 09:23:43</sys_created_on>
+                        <sys_id>8cfbabd0dbb4f300afa1f9961d96197e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>Praveen.k</sys_updated_by>
+                        <sys_updated_on>2019-04-10 09:23:43</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

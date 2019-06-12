@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="state_province" label="State/Province" language="en" table="x_nouin_nousvenafi_certificate_rqst">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>state_province</element>
+            <help/>
+            <hint/>
+            <label>State/Province</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <plural>State/Provinces</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-08-09 07:58:53</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_id>0058cb9cdb2c03000497d450cf961908</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>State/Province</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_documentation_x_nouin_nousvenafi_certificate_rqst_state_province_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-08-09 07:58:53</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

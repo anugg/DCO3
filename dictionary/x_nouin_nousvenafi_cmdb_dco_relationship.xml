@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="CMDB DCO Relationship" max_length="40" name="x_nouin_nousvenafi_cmdb_dco_relationship" type="collection">
+        <element display="true" label="Certificate" max_length="32" name="certificate" reference="x_nouin_nousvenafi_certificate_rqst" type="reference"/>
+        <element label="CI" max_length="4000" name="ci" reference="cmdb_ci" type="glide_list"/>
+        <element label="Common Name" max_length="40" name="common_name" type="string"/>
+        <index name="index">
+            <element name="certificate"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+   "PolicyDN":"\\VED\\Policy\\Certificates",&#13;
+"PKCS10":"-----BEGIN CERTIFICATE REQUEST-----MIICsTCCAZkCAQAwbDELMAkGA1UEBhMCVVMxDjAMBgNVBAgTBVN0YXRlMREwDwYDVQQHEwhOZXcgWW9yazERMA8GA1UECxMIT3JnIFVuaXQxDDAKBgNVBAoTA09yZzEZMBcGA1UEAxMQQ2hlY2tQb2xpY3kgVGVzdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN0V5Az+9duMuD5pcnuxflsFL8PDNjoMQyHZRAck+8eSAGS/88ryURTxytRKz5Cys7iYqkmsU9ZOSpYV9hQH0W3zVPaY5ZSYLNBfnomcyEFKMGqTwRnYJHIt/k7Rh/T67EEkUPth6GHDXhte9/k2EAgNZemUTu/uesH3k+rrwADYPEdF9EPUwzqRS8kWay/SOc/N0zrZBNro1GFC+pOH1D5T3lqbBsAl8fFiekRhnYmbFHtQTR55K6CZwZxcxPtyJ69bUZUpW38CudNVozQkAogAHkUZ0Fhdb29OP1zXdEdzmqmrBAJZVU4qUYDCeZbELqM7RWzoA8c7q8/zvRKOpucCAwEAAaAAMA0GCSqGSIb3DQEBCwUAA4IBAQBf2KPj+7TNR3rZ45WJDl1R7wU8I3f24xCVNlC5ltCZGClXesexnUdjHJUOO5NYs9vyngjGME2ObDpHaR1byPKRZ1KNmC8a48O9U8ClhFDnEQUFQuJ81ZWYXg3/0UykFs0PXkdMjwNQYV/R9r29EW6A7H3ja4QY3YwZO0O9BmiDoBtWujUaG0ULY4y5dnP8W/vEbsrJYLCWbEAolrl8Tyoz4lyUga20cDYT1KppN0N3wIndIWVNEBNxc2Y06jNEiZEMtCMPXR1jFhVuAun/0OumRMaFo2D9HHLXkgu0hqjkiXnOTN/pStBXBnE/JlHk6MyXvVDmhAqOXoi2/TtV+Ilh-----END CERTIFICATE REQUEST----- "&#13;
+}</content>
+        <function_name>Default GET</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Get Detail from csr [ Default GET ]</qualified_name>
+        <rest_endpoint>https://10.0.0.126/VEDSDK//Certificates/CheckPolicy</rest_endpoint>
+        <rest_message display_value="Get Detail from csr">80ea5ae4dbac7b40afa1f9961d96195e</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-03-29 11:53:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>222b9a28dbac7b40afa1f9961d961910</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Default GET</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_222b9a28dbac7b40afa1f9961d961910</sys_update_name>
+        <sys_updated_by>jagdish.m</sys_updated_by>
+        <sys_updated_on>2019-04-01 07:17:57</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server display_value="Venafi AWS dev35307">6cf6ef33dbd50300f74bf3d51d96199d</use_mid_server>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

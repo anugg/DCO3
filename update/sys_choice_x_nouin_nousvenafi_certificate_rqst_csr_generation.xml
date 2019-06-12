@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="csr_generation" table="x_nouin_nousvenafi_certificate_rqst" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>csr_generation</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Generate a CSR for me</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <sequence>100</sequence>
+            <sys_created_by>sudhakar.c</sys_created_by>
+            <sys_created_on>2018-10-23 06:56:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a265784adb1123406ff7fd741d9619e4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sudhakar.c</sys_updated_by>
+            <sys_updated_on>2018-10-23 06:56:11</sys_updated_on>
+            <value>Generate a CSR for me</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>csr_generation</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>I will generate my CSR</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <sequence>200</sequence>
+            <sys_created_by>sudhakar.c</sys_created_by>
+            <sys_created_on>2018-10-23 06:56:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8a85384adb1123406ff7fd741d96197a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>sudhakar.c</sys_updated_by>
+            <sys_updated_on>2018-10-23 06:56:30</sys_updated_on>
+            <value>I will generate my CSR</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>csr_generation</element>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>sudhakar.c</sys_created_by>
+            <sys_created_on>2018-10-23 06:56:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>6f75384adb1123406ff7fd741d961903</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>csr_generation</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_choice_x_nouin_nousvenafi_certificate_rqst_csr_generation</sys_update_name>
+            <sys_updated_by>sudhakar.c</sys_updated_by>
+            <sys_updated_on>2018-10-23 06:56:11</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

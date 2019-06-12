@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_nouin_nousvenafi.NousRetrieveCertificate</api_name>
+        <client_callable>true</client_callable>
+        <description>This Script Include is used for Retrive the certificate details</description>
+        <name>NousRetrieveCertificate</name>
+        <script><![CDATA[var NousRetrieveCertificate = Class.create();
+NousRetrieveCertificate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	retrieveCertificate: function(){
+		var x = new Nous_GetAPIKey();
+		var restMessage;
+		var apiKey = x.getValidAPIKey();
+		var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+		var certificateDN = this.getParameter('sysparm_certdn');
+		var certFormat = this.getParameter('sysparm_format');
+		var includePrivateKey = this.getParameter('sysparm_includePrivateKey');
+		var privateKeyPassword = this.getParameter('sysparm_privateKeyPassword');
+		var keystrpwd = this.getParameter('sysparm_keystore');
+		var frndlyname = this.getParameter('sysparm_frdlyname');
+		//gs.info("Certificate DN in Script include:"+certificateDN);
+		//gs.info("Checkbox in Script include:"+includePrivateKey);
+		//gs.info("Password in Script include:"+privateKeyPassword.toString())
+		
+		var payload;
+		if(includePrivateKey == "true"){
+			//gs.info("Private Key checked");
+			payload = {"CertificateDN":String(certificateDN),
+				
+				"Format":String(certFormat),
+				"Password":String(privateKeyPassword),
+				"IncludePrivateKey":String(includePrivateKey),
+				"FriendlyName":String(frndlyname),"KeystorePassword":String(keystrpwd)};
+			}
+			else{
+				//gs.info("Private Key not checked");
+				payload ={"CertificateDN":String(certificateDN),
+					"Format":String(certFormat),
+					"FriendlyName":String(frndlyname),
+					"KeystorePassword":String(keystrpwd)};
+				}
+				var json = JSON.stringify(payload);
+				gs.info("Retreive JSON--"+json);
+					try{
+				restMessage = new sn_ws.RESTMessageV2(); //Rest Call to Venafi
+				restMessage.setHttpMethod("POST");
+		       restMessage.setEndpoint(gs.getProperty('x_nouin_nousvenafi.venafi_url')+"certificates/retrieve");
+				//restMessage.setEndpoint("x_nouin_nousvenafi.venafi_url/certificates/retrieve");
+				restMessage.setRequestHeader('Content-Type','application/json');
+				restMessage.setRequestHeader('X-Venafi-Api-Key', apiKey);
+				restMessage.setRequestBody(json);
+				restMessage.setMIDServer(mid_server);
+	         	restMessage.setEccParameter('skip_sensor', true);
+				var response = restMessage.execute();
+				var responseBody = response.getBody();
+				var status = response.getStatusCode();
+				gs.info("Retreive Body "+ responseBody);
+		     //  gs.info('error message>>>>:'+response.getErrorMessage());
+			gs.info("Status in Retreive Body "+status);
+				var parser = JSON.parse(responseBody);//Parse response
+		
+				var certData = parser.CertificateData;
+		       // gs.info("certData "+ certData);
+				var cerformat = parser.Format;
+		       // gs.info("cerformat "+ cerformat);
+				var fileName = parser.Filename;
+	
+//fileName = fileName.replace(/\"/g, "");
+//var certificate = gs.base64Decode(certData);
+//gs.info("certificate data is:"+certificate);
+return fileName + '||'+ certData;	
+					}
+		
+		catch(ex) {
+	responseBody = ex.getMessage();
+	status = '500';
+}
+		finally {
+	 	requestBody = restMessage ? restMessage.getRequestBody():null;
+}
+			
+			},
+			type: 'NousRetrieveCertificate'
+
+		});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-13 12:36:29</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f2e30d7bdb7332000497d450cf9619de</sys_id>
+        <sys_mod_count>88</sys_mod_count>
+        <sys_name>NousRetrieveCertificate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_script_include_f2e30d7bdb7332000497d450cf9619de</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-26 06:51:31</sys_updated_on>
+    </sys_script_include>
+</record_update>

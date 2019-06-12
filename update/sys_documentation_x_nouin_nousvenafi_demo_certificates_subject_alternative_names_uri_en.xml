@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="subject_alternative_names_uri" label="Subject Alternative Names(URI)" language="en" table="x_nouin_nousvenafi_demo_certificates">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>subject_alternative_names_uri</element>
+            <help/>
+            <hint/>
+            <label>Subject Alternative Names(URI)</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_demo_certificates</name>
+            <plural>Subject Alternative Names(URI)</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jagdish.m</sys_created_by>
+            <sys_created_on>2019-04-16 09:53:09</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>0a3c2e92dbf43b006ff7fd741d961987</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Subject Alternative Names(URI)</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_documentation_x_nouin_nousvenafi_demo_certificates_subject_alternative_names_uri_en</sys_update_name>
+            <sys_updated_by>jagdish.m</sys_updated_by>
+            <sys_updated_on>2019-04-16 09:53:09</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

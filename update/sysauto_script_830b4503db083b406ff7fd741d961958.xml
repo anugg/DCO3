@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>true</conditional>
+        <name>Revoking the certficate</name>
+        <run_as display_value="Anu G">a8065238db807b00afa1f9961d9619c8</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 00:01:00</run_period>
+        <run_start>2019-03-12 03:56:57</run_start>
+        <run_time>1970-01-01 12:00:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var gr1=new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+gr1.addQuery('status','Pending Revocation');
+gr1.query();
+while(gr1.next())
+	{
+		var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+url = (url + 'authorize');
+var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+var pwd = gs.getProperty('x_nouin_nousvenafi.password');
+var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+var count=0;
+
+var payload = {"Username": String(uname),"Password": String(pwd)};
+	var json = JSON.stringify(payload);
+	var sm = new sn_ws.RESTMessageV2();
+	sm.setEndpoint(url);
+	sm.setHttpMethod("POST");
+	sm.setRequestHeader('Content-Type','application/json');
+	sm.setRequestBody(json);
+	//if (!mid_server.isNil())
+	sm.setMIDServer(mid_server);
+	var response = sm.execute();
+	
+	var responseBody = response.getBody();
+		
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+		gs.info(responseBody);
+		
+	var objJSON = JSON.parse(responseBody);//Parse JSON response
+	var apiKey = objJSON.APIKey;
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+gs.info('Response in Get API Key Call:'+apiKey);
+		if (gr1.status != 'Revoked')
+{		
+				var certificateDN = gr1.certificate_dn;
+				var payload1 = {"CertificateDN": String(certificateDN)};
+				var json = JSON.stringify(payload1);
+				gs.info("Revoke json in SJ1:"+json);
+				gs.info("CertificateDN in SJ1:"+certificateDN);
+				var restMessage = new sn_ws.RESTMessageV2(); //Rest Call to Venafi
+				restMessage.setHttpMethod("POST");
+				restMessage.setEndpoint("https://10.0.0.126/VEDSDK/Certificates/Revoke");
+				restMessage.setRequestHeader('Content-Type','application/json');
+				restMessage.setRequestHeader('X-Venafi-Api-Key', apiKey);
+				restMessage.setRequestBody(json);
+				restMessage.setMIDServer(mid_server);
+				var response = restMessage.execute();
+				response.waitForResponse(100);
+				var responseBody = response.getBody();
+				gs.info("Certificate Revoked Response from SJ:"+responseBody);
+				var objJSON = JSON.parse(responseBody);
+				var revoke = objJSON.Revoked;
+				var requested = objJSON.Requested;
+				var success = objJSON.Success;
+				var responseError=false;
+			     count=1;
+				gs.info("Certificate Revoked Response in SJ1:"+revoke);
+				gs.info("Certificate Revoke requested Response in SJ1:"+requested);
+				gs.info("Certificate success Responsein SJ1:"+success);
+
+				if(requested == true)
+				{
+					responseError=true;
+					current.status = "Pending Revocation";
+			// 		gs.info("Certificate Revoked Response inside WF if:"+current.status);
+			// 		current.status = "Revoked";
+					current.update();
+				}
+				else if(revoke == true)
+				{
+					gs.info("Certificate Revoked Response inside WF else:"+current.status);
+					gr1.status = "Revoked";
+					gr1.update();
+					//gr1.setAbortAction(True);
+				}
+	}
+}
+//======================================================
+// var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+// url = (url + 'authorize');
+// var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+// var pwd = gs.getProperty('x_nouin_nousvenafi.password');
+// var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+
+
+// 	var payload = {"Username": String(uname),"Password": String(pwd)};
+// 	var json = JSON.stringify(payload);
+// 	var sm = new sn_ws.RESTMessageV2();
+// 	sm.setEndpoint(url);
+// 	sm.setHttpMethod("POST");
+// 	sm.setRequestHeader('Content-Type','application/json');
+// 	sm.setRequestBody(json);
+// 	//if (!mid_server.isNil())
+// 	sm.setMIDServer(mid_server);
+// 	var response = sm.execute();
+	
+// 	var responseBody = response.getBody();
+		
+// 	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+// 	var status = response.getStatusCode();
+// 		gs.info(responseBody);
+		
+// 	var objJSON = JSON.parse(responseBody);//Parse JSON response
+// 	var apiKey = objJSON.APIKey;
+// 	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+// 	var status = response.getStatusCode();
+// gs.info('Response in Get API Key Call:'+apiKey);
+// url1 = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+// var gr1=new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+// gr1.addQuery('status','Queued for renewal');
+// gr1.query();
+// while(gr1.next())
+// 	{
+// var guid=gr1.guid;
+// 		gs.info("GUID"+guid);
+// var urlNew = url1+'certificates'+'/'+guid;
+// gs.info("New URL:"+urlNew );
+// gs.info("Nickname:"+gr1.nickname);
+// var r = new sn_ws.RESTMessageV2();
+// r.setEndpoint(urlNew);
+// r.setHttpMethod("GET");
+// r.setRequestHeader('Content-Type','application/json');
+// r.setRequestHeader('X-Venafi-Api-Key',apiKey);//workflow.scratchpad
+// r.setMIDServer(mid_server);
+// var response = r.execute();
+// response.waitForResponse(2000);
+// responseBody = response.getBody();
+// gs.info("Certificate Details Response+get:"+responseBody);
+
+// var objJSON = JSON.parse(responseBody);
+// 	validTo = objJSON.CertificateDetails.ValidTo;
+// 	validFrom = objJSON.CertificateDetails.ValidFrom;
+// 	certauth = objJSON.CertificateAuthorityDN;
+// 	var responseError=false;
+// // 	gs.info("Certificate Details ValidTo"+validTo);
+
+// if (validTo == undefined && validTo =="NULL") {
+// 	responseError = true;
+// 	//gs.info("Response is undefined and not proper,Please try again to download the Certificate details"+validTo);
+// }
+
+// else{
+// 		if(validTo!=gr1.certificate_valid_to)
+// 			{
+// 				gs.info("certficate renewed: "+ validTo +" is the new validity Period");
+// 	   gr1.certificate_valid_to = validTo;
+// 		gr1.certificate_valid_from = validFrom;
+// 		gr1.certificate_authority = certauth;
+// 		gs.info("Certificate Autho:" +certauth);	
+// 		gr1.update();
+// 		}
+// }
+// var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+// var	status = response.getStatusCode();
+// 	gs.info("status:"+status);
+// 	}
+	]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-03-12 03:58:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>830b4503db083b406ff7fd741d961958</sys_id>
+        <sys_mod_count>4189</sys_mod_count>
+        <sys_name>Revoking the certficate</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysauto_script_830b4503db083b406ff7fd741d961958</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-05-02 06:06:42</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

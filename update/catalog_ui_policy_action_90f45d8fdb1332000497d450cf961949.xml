@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Request a Certificate">d9eb0a8edb5332000497d450cf96191f</catalog_item>
+        <catalog_variable>IO:da8ec202db9332000497d450cf961986</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-16 09:19:50</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>90f45d8fdb1332000497d450cf961949</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>enter_csr</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_90f45d8fdb1332000497d450cf961949</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-16 09:19:50</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Show/Hide Enter CSR Fields.">d3c4998fdb1332000497d450cf9619fc</ui_policy>
+        <variable>enter_csr</variable>
+        <variable_set/>
+        <visible>true</visible>
+    </catalog_ui_policy_action>
+</record_update>

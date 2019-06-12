@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Test for renewal</name>
+        <run_as display_value="Anu G">a8065238db807b00afa1f9961d9619c8</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 04:00:00</run_period>
+        <run_start>2019-03-13 11:12:24</run_start>
+        <run_time>1970-01-01 08:01:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+url = (url + 'authorize');
+var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+var pwd = gs.getProperty('x_nouin_nousvenafi.password');
+var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+
+
+	var payload = {"Username": String(uname),"Password": String(pwd)};
+	var json = JSON.stringify(payload);
+	var sm = new sn_ws.RESTMessageV2();
+	sm.setEndpoint(url);
+	sm.setHttpMethod("POST");
+	sm.setRequestHeader('Content-Type','application/json');
+	sm.setRequestBody(json);
+	//if (!mid_server.isNil())
+	sm.setMIDServer(mid_server);
+	var response = sm.execute();
+	
+	var responseBody = response.getBody();
+		
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+		gs.info(responseBody);
+		
+	var objJSON = JSON.parse(responseBody);//Parse JSON response
+	var apiKey = objJSON.APIKey;
+	var responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+	var status = response.getStatusCode();
+gs.info('Response in Get API Key Call-SJ renewal:'+apiKey);
+		var certificateDN;
+		var guid;
+		var restMessage;
+		
+var gr1=new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+gr1.addQuery('nickname','weerrty.servicenow.com');
+gr1.query();
+while(gr1.next())
+	{
+			certificateDN = gr1.getValue('certificate_dn');
+			guid = gr1.getValue('guid');
+			var payload = {"CertificateDN": String(certificateDN)};
+			var json = JSON.stringify(payload);
+		   restMessage = new sn_ws.RESTMessageV2(); //Rest Call to Venafi
+			restMessage.setHttpMethod("POST");
+			restMessage.setEndpoint(gs.getProperty('x_nouin_nousvenafi.venafi_url')+"certificates/renew");
+			//restMessage.setEndpoint("x_nouin_nousvenafi.venafi_url/certificates/renew");
+			restMessage.setRequestHeader('Content-Type','application/json');
+			restMessage.setRequestHeader('X-Venafi-Api-Key', apiKey);
+			restMessage.setRequestBody(json);
+			restMessage.setMIDServer(mid_server);
+			restMessage.setEccParameter('skip_sensor',true);
+			
+			var response = restMessage.execute();
+			var responseBody = response.getBody();
+			gs.info("Renewal Response -SJ renewal:"+responseBody);
+			var objJSON = JSON.parse(responseBody);
+			
+			if(objJSON.Success == true){
+				var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+				var urlNew = url+'certificates'+'/'+guid;
+				var responseBody1;
+				var validTo;
+				var validFrom;
+				var status;
+				
+				
+				gs.info("URL in Renewal SI -SJ renewal:"+urlNew);
+				//gs.info("ApiKey Renewal SI:"+apiKey);
+				
+				
+				var r = new sn_ws.RESTMessageV2();
+					r.setEndpoint(urlNew);
+					r.setHttpMethod("GET");
+					r.setRequestHeader('Content-Type','application/json');
+					r.setRequestHeader('X-Venafi-Api-Key', apiKey);
+					r.setMIDServer(mid_server);
+					r.setEccParameter('skip_sensor',true);
+				var response1 = r.execute();
+					response1.waitForResponse(2000);
+					responseBody1 = response1.getBody();
+					gs.info("Response in Renewal SI -SJ renewal:" + responseBody1);
+				
+				var objJSON1 = JSON.parse(responseBody1);
+					validTo = objJSON1.CertificateDetails.ValidTo;
+					validFrom = objJSON1.CertificateDetails.ValidFrom;
+// 					gs.info("ValidTo in Renewal SI:"+validTo);
+// 					gs.info("ValidFrom in Renewal SI:"+validFrom);
+				gs.info("status for renewal-SJ renewal" +objJSON1.ProcessingDetails.Status);
+				status=objJSON1.ProcessingDetails.Status;
+				
+					
+							gr1.certificate_valid_to = objJSON1.CertificateDetails.ValidTo;
+							gr1.certificate_valid_from = objJSON1.CertificateDetails.ValidFrom;
+							gr1.status=status;
+// 							gr2.certificate_valid_to = validTo;
+// 							gr2.certificate_valid_from = validFrom;
+							gr1.update();
+			}
+	}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-03-13 11:26:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>af48f75fdb087b406ff7fd741d96194c</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Test for renewal</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysauto_script_af48f75fdb087b406ff7fd741d96194c</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-30 04:28:39</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

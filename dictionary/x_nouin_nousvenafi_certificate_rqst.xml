@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Certificates" max_length="40" name="x_nouin_nousvenafi_certificate_rqst" type="collection">
+        <element label="Alias" max_length="40" name="alias" type="string"/>
+        <element label="API_Key" max_length="40" name="api_key" type="string"/>
+        <element label="Approver" max_length="40" name="approver_nous" type="string"/>
+        <element label="Assigned CI" max_length="4000" name="assigned_ci" reference="cmdb_ci" type="glide_list"/>
+        <element label="Certificate Authority" max_length="100" name="certificate_authority" type="string"/>
+        <element label="Certificate Data" max_length="5000" name="certificate_date" type="string"/>
+        <element label="Certificate DN" max_length="1000" name="certificate_dn" type="string"/>
+        <element label="Certificate Folder" max_length="40" name="certificate_folder" type="string"/>
+        <element label="Certificate Friendly Name" max_length="40" name="certificate_friendly_name" type="string"/>
+        <element label="Certificate Valid From" max_length="40" name="certificate_valid_from" type="glide_date_time"/>
+        <element label="Certificate Valid Till" max_length="40" name="certificate_valid_to" type="glide_date_time"/>
+        <element choice="1" label="Chain Order" max_length="40" name="chain_order" type="choice">
+            <choice/>
+        </element>
+        <element label="City/Locality" max_length="40" name="city_locality" type="string"/>
+        <element label="Common Name" max_length="40" name="common_name" type="string"/>
+        <element label="Confirm Keystore Password" max_length="40" name="confirm_keystore_password" type="string"/>
+        <element label="Confirm Password" max_length="40" name="confirm_password" type="string"/>
+        <element label="Contacts" max_length="40" name="contacts" type="string"/>
+        <element label="Country" max_length="40" name="country" type="string"/>
+        <element choice="1" label="CSR Generation" max_length="40" name="csr_generation" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Generate a CSR for me" sequence="100" value="Generate a CSR for me"/>
+                <element inactive_on_update="false" label="I will generate my CSR" sequence="200" value="I will generate my CSR"/>
+            </choice>
+        </element>
+        <element label="Description" max_length="1000" name="description_nous" type="string_full_utf8"/>
+        <element label="Enter CSR" max_length="1000" name="enter_csr" type="string"/>
+        <element label="File Name" max_length="40" name="file_name" type="string"/>
+        <element label="Format" max_length="40" name="format" type="string"/>
+        <element label="GUID" max_length="40" name="guid" type="string"/>
+        <element label="Hash Algorithm" max_length="40" name="hash_algorithm" type="string"/>
+        <element label="Keystore Password" max_length="40" name="keystore_password" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Key Alogrithm" max_length="40" name="key_alogrithm" type="string"/>
+        <element label="Key Size" max_length="40" name="key_strength" type="string"/>
+        <element label="Management Type" max_length="40" name="management_type" type="string"/>
+        <element display="true" label="Nickname" max_length="40" name="nickname" type="string"/>
+        <element label="Organization" max_length="40" name="organization" type="string"/>
+        <element label="Organization Unit" max_length="40" name="organization_unit" type="string"/>
+        <element label="Password" max_length="40" name="password" type="string"/>
+        <element label="Private Key" max_length="40" name="private_key" type="boolean"/>
+        <element label="Requested For" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element label="Requested Item" max_length="32" name="requested_item" reference="sc_req_item" type="reference"/>
+        <element label="Root Chain" max_length="40" name="root_chain" type="boolean"/>
+        <element label="State/Province" max_length="40" name="state_province" type="string"/>
+        <element audit="true" label="Status" max_length="1000" name="status" type="string"/>
+        <element label="Subject Alternative Names(DNS)" max_length="40" name="subject_alternative_names" type="string"/>
+        <element label="Subject Alternative Names(Email)" max_length="100" name="subject_alternative_names_email" type="string"/>
+        <element label="Subject Alternative Names(IP)" max_length="100" name="subject_alternative_names_ip" type="string"/>
+        <element label="Subject Alternative Names(URl)" max_length="100" name="subject_alternative_names_url" type="string"/>
+        <element label="Subject Alternative Names(URN)" max_length="100" name="subject_alternative_names_urn" type="string"/>
+        <element label="Use Case" max_length="32" name="use_case" reference="x_nouin_nousvenafi_policy" type="reference"/>
+        <index name="index">
+            <element name="use_case"/>
+        </index>
+        <index name="index2">
+            <element name="requested_for"/>
+        </index>
+        <index name="index3">
+            <element name="requested_item"/>
+        </index>
+    </element>
+</database>

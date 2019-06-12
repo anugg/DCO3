@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var sysId ;
+var expireDate;
+var renewalSysId;
+var renewalResponse;
+function renewCertificate(){
+	alert("Please Wait,It will take few seconds to renew the certificate!!!");
+	 sysId = gel(selectedID).value;
+var ga = new GlideAjax('Nous_RenewCertificate');
+	ga.addParam('sysparm_name','renewCertificate');
+	ga.addParam('sysparm_id', sysId);
+	ga.getXML(renew);
+
+}
+	function renew(response) {
+		var answer =response.responseXML.documentElement.getAttribute("answer");
+		
+		if((answer == '')||(answer == 'undefined'))
+		{
+			
+			alert('Certificate Renewing Error');
+			refreshCertificateRequest();
+		}
+
+		var result = answer.split('||');
+			renewalSysId = result[1];
+			renewalResponse = result[0];
+		var objJSON = JSON.parse(renewalResponse);
+		//alert("Inside Response");
+		
+		var Success = objJSON.Success;
+		var Error = objJSON.Error;
+		var renewDetailsTable = document.getElementById("renewDetailsTable");
+		var expirationDateSuccess = document.getElementById("expirationDateSuccess");
+		var cancelRenewButton = document.getElementById("submit_renew_button");
+		var expirationDateFailure = document.getElementById("expirationDateFailure");
+		if(Success == true){
+			var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+				gr.addQuery('sys_id', sysId);
+				gr.query();
+			while(gr.next()){
+				//alert("SYSID thorugh getUnique value:"+renewalSysId);
+				var gr1 = new GlideRecord('x_nouin_nousvenafi_certificate_renewal_history');
+					gr1.addQuery('sys_id',renewalSysId);
+					gr1.query();
+				while(gr1.next()){
+					gr1.renewed_valid_from = gr.getValue('certificate_valid_from');
+					gr1.renewed_valid_to = gr.getValue('certificate_valid_to');
+					gr1.renewed_by = g_user.getFullName();
+					gr1.status = 'Successfully Renewed.';
+					gr1.response = renewalResponse.toString();
+					gr1.update();
+					//alert("History table updated in UI Page");
+				}
+					
+			}
+			renewDetailsTable.style.display = 'none';
+			expirationDateSuccess.style.display = 'block';
+			cancelRenewButton.style.display = 'none';
+			expirationDateFailure.style.display = 'none';
+			
+			}
+			else{
+				var gr2 = new GlideRecord('x_nouin_nousvenafi_certificate_renewal_history');
+					gr2.addQuery('sys_id',renewalSysId);
+					gr2.query();
+				while(gr2.next()){
+					gr2.renewed_valid_from = '';
+					gr2.renewed_valid_to = '';
+					gr2.renewed_by = g_user.getFullName();
+					gr2.status = 'Renewal Failed.';
+					gr2.response = objJSON;
+					gr2.update();
+				}
+				renewDetailsTable.style.display = 'none';
+				expirationDateSuccess.style.display = 'none';
+				cancelRenewButton.style.display = 'none';
+				expirationDateFailure.style.display = 'block';
+				
+				}
+				
+	}
+
+//Cancel button
+function cancelButton() {
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}
+
+function refreshCertificateRequest(){
+	GlideDialogWindow.get().destroy();
+	GlideList2.get("x_nouin_nousvenafi_certificate_rqst").refresh();
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_displayRenewDetails.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>  
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+   <g:ui_form>
+      <input type="hidden" id="cancelled" name="cancelled" value="false"/>
+      <input type="hidden" id="selectedID" name="selectedID" value="${sysparm_sysID}"/>
+      <table id="renewDetailsTable">
+         <j:set var="jvar_record" value="${sysparm_sysID}" />
+         <g:evaluate var="jvar_records" jelly="true" object="true">  
+            var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+            gr.addQuery('sys_id', "${jvar_record}");
+            gr.query();
+            gr;
+         </g:evaluate>
+         <j:while test="${jvar_records.next()}">
+            <tr>
+               <td>
+                  <g:ui_input_field type= "text" name="cFolder" label = "Certificate Folder:" value="${jvar_records.getValue('certificate_folder')}" size ="50px" readonly="true"/>
+               </td>
+			 </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="nickname" label = "Nickname:" value="${jvar_records.getValue('nickname')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="managementType" label = "Management Type:" value="${jvar_records.getValue('management_type')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="contacts" label = "Contacts:" value="${jvar_records.getValue('contacts')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="hashAlgorithm" label = "Hash Algorithm:" value="${jvar_records.getValue('hash_algorithm')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="csrGeneration" label = "CSR Generation:" value="${jvar_records.getValue('csr_generation')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="commonName" label = "Common Name:" value="${jvar_records.getValue('common_name')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="organization" label = "Organization:" value="${jvar_records.getValue('organization')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="org_unit" label = "Organizational Units:" value="${jvar_records.getValue('organization_unit')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="city_locality" label = "City/Locality:" value="${jvar_records.getValue('city_locality')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="state" label = "State/Province:" value="${jvar_records.getValue('state_province')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="country" label = "Country:" value="${jvar_records.getValue('country')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="keyStrength" label = "Key Strength:" value="${jvar_records.getValue('key_strength')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <g:ui_input_field type = "text" name="approvers" label = "Approvers:" value="${jvar_records.getValue('approver_nous')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+		<!-- 	<tr>
+               <td>
+                  <g:ui_input_field type = "text" name="autorenew" label = "Automatic Renewal?" value="${jvar_records.getValue('automatic_renewel')}" size ="50px" readonly="true"/>
+               </td>
+            </tr> -->
+            <tr>
+               <td>
+                  <g:ui_multiline_input_field type ="text" name="certificateAuthority" label = "Certificate Authority:" value="${jvar_records.getValue('certificate_authority')}" size ="50px" readonly="true"/>
+               </td>
+            </tr>
+         </j:while>
+      </table>
+      <div id="submit_renew_button" style="display: inline-block;">
+         <g:dialog_button style="color:#ffffff;background:#278efc" onclick="cancelButton()" type="button">Cancel</g:dialog_button>
+         <g:dialog_button style="color:#ffffff;background:#278efc" onclick="renewCertificate()" type="button">Renew</g:dialog_button>
+      </div>
+      <div class="expireDateSuccess" id="expirationDateSuccess" style="display:none;">
+         <div class="sectionTitle">
+            <div class="text">This certificate is being renewed.</div>
+         </div>
+         <!-- <div class="expirationInfo">Expiration Date Details:
+            <span class="noExpiration" style="display: none;">Data Unavailable</span>
+            <span class="daysLeft">365 Days Left</span>
+            <span class="expirationDate">8/1/2018</span>
+            </div>
+            <div>Will Renew in 335 Days</div> -->
+         <g:dialog_button style="color:#ffffff;background:#278efc" onclick="refreshCertificateRequest()" type="button">OK</g:dialog_button>
+      </div>
+      <div class="expireDateFailure" id="expirationDateFailure" style="display:none;">
+         <div class="sectionTitle">
+            <div class="text">Renewal Failed.</div>
+         </div>
+         <g:dialog_button style="color:#ffffff;background:#278efc" onclick="refreshCertificateRequest()" type="button">OK</g:dialog_button>
+      </div>
+   </g:ui_form>
+   <style>
+      .modal-header{	
+      padding: 10px;
+      background: #000;
+      color: #fff;
+      }
+      #submit_renew_button
+      { 
+      float: right;
+      margin-left: 5px;
+      margin-bottom: 0;
+      margin-top: 55px; 
+      line-height: normal;
+      display: inline-block;
+      bottom: 25px;
+      }
+      #submit_renew_button .btn{
+      margin-left:10px;
+      }
+   </style>
+</j:jelly>]]></html>
+        <name>displayRenewDetails</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-14 07:26:53</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>7197cd04db4803000497d450cf9619ca</sys_id>
+        <sys_mod_count>157</sys_mod_count>
+        <sys_name>displayRenewDetails</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_7197cd04db4803000497d450cf9619ca</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-10-17 12:44:02</sys_updated_on>
+    </sys_ui_page>
+</record_update>

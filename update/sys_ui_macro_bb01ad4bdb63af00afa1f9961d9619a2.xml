@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>CSR Content</name>
+        <scoped_name>x_nouin_nousvenafi_CSR Content</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-02-15 09:02:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bb01ad4bdb63af00afa1f9961d9619a2</sys_id>
+        <sys_mod_count>64</sys_mod_count>
+        <sys_name>CSR Content</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_macro_bb01ad4bdb63af00afa1f9961d9619a2</sys_update_name>
+        <sys_updated_by>jagdish.m</sys_updated_by>
+        <sys_updated_on>2019-04-05 09:44:18</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:macro onclick="clearForm()" style="" id="MANDATORY" type="submit" />  
+	
+	<g:evaluate var="jvar_csr_contents" object="true">
+		
+	</g:evaluate>
+	<script type="text/javascript">
+		
+		function getDetails(city)
+	   {
+		 alert("UI Macro:"+city);
+		   $j("#city").val(text);
+		}
+	</script>
+	<table style="width:100%">
+		<tr><th>Label</th><th>Value</th><th>Correct Value/Hint</th>
+	</tr><tr>
+		<td>Approver:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Assigned CI:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Automatic Renewal?:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Certificate Authority<!-- (Auto populated after Configuration of Policy) -->:</td><td></td><td></td>	
+	</tr><tr>
+		<td>Certificate Folder:	</td><td></td><td></td>		
+	</tr><tr>
+<!-- 		<td>City/Locality:</td><td>${g_form.getValue('csr_contents_city')}</td><td></td>		 -->
+		<td>City/Locality:</td><td>${JS:city}</td><td></td>
+		</tr><tr>
+		<td>Common Name:</td><td></td><td></td>		
+	</tr><tr>
+		<td>Contacts:</td><td></td><td></td>
+	</tr><tr>
+		<td>CSR Generation:	</td><td></td><td></td>			
+	</tr><tr>
+		<td>Description:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Enter CSR:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Hash Algorithm:	</td><td></td><td></td>			
+	</tr><tr>
+		<td>Key Algorithm:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Key Size:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Management Type:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Nickname:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Organization:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Organizational Unit:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Requested For:</td><td></td><td></td>			
+	</tr><tr>
+		<td>State/Province:</td><td></td><td></td>			
+	</tr><tr>
+		<td>Subject Alternative Names:</td><td></td><td></td>			
+	</tr>
+	</table>
+	
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

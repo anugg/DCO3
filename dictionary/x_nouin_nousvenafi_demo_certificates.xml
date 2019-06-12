@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Digital Certificates" max_length="40" name="x_nouin_nousvenafi_demo_certificates" type="collection">
+        <element label="Assigned CI" max_length="4000" name="assigned_ci" type="glide_list"/>
+        <element label="Certificate Authority" max_length="100" name="certificate_authority" type="string"/>
+        <element label="Certificate Date" max_length="40" name="certificate_date" type="string"/>
+        <element label="Certificate DN" max_length="1000" name="certificate_dn" type="string"/>
+        <element label="Certificate Folder" max_length="100" name="certificate_folder" type="string"/>
+        <element label="Certificate Valid From" max_length="40" name="certificate_valid_from" type="glide_date_time"/>
+        <element label="Certificate Valid Till" max_length="40" name="certificate_valid_till" type="glide_date_time"/>
+        <element label="City/Locality" max_length="40" name="city_locality" type="string"/>
+        <element label="Common name" max_length="512" name="common_name" type="string"/>
+        <element label="Country" max_length="40" name="country" type="string"/>
+        <element label="GUID" max_length="40" name="guid" type="string"/>
+        <element label="Hash Algorithm" max_length="40" name="hash_algorithm" type="string"/>
+        <element label="Organization" max_length="40" name="organization" type="string"/>
+        <element label="State/Province" max_length="40" name="state_province" type="string"/>
+        <element label="Status" max_length="40" name="status" type="string"/>
+        <element label="Subject Alternative Names(DNS)" max_length="100" name="subject_alternative_names_dns" type="string"/>
+        <element label="Subject Alternative Names(Email)" max_length="100" name="subject_alternative_names_email" type="string"/>
+        <element label="Subject Alternative Names(IP)" max_length="100" name="subject_alternative_names_ip" type="string"/>
+        <element label="Subject Alternative Names(UPN)" max_length="100" name="subject_alternative_names_upn" type="string"/>
+        <element label="Subject Alternative Names(URI)" max_length="100" name="subject_alternative_names_uri" type="string"/>
+    </element>
+</database>

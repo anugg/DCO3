@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_ui_policy">
+    <catalog_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>false</applies_catalog>
+        <applies_req_item>true</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <catalog_conditions>IO:9e8ec202db9332000497d450cf96197a=I will generate my CSR^EQ</catalog_conditions>
+        <catalog_item display_value="Request a Certificate">d9eb0a8edb5332000497d450cf96191f</catalog_item>
+        <conditions/>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>190</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+	alert("Populating the exact values from Catalog Item");
+	g_form.setReadOnly('enter_csr',true);
+ var CSR = g_form.getValue('enter_csr');
+	var policyDN = g_form.getValue('certificate_folder');
+	var csrBytes = unescape(encodeURIComponent(CSR)).length;
+	var ga = new GlideAjax('Nous_GetAttributes');
+	ga.addParam('sysparm_name','getCertificateAttributes');
+	ga.addParam('sysparm_csr', CSR);
+	ga.addParam('sysparm_policyDN', policyDN);
+	ga.getXML(ajaxResponse);
+	
+	function ajaxResponse(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		var jsonValues = JSON.parse(answer);
+		g_form.setValue('city_locality',jsonValues.x_nouin_nousvenafi_default_city_locality);
+			g_form.setValue('key_algorithm',jsonValues.x_nouin_nousvenafi_default_key_algorithm);
+			g_form.setValue('key_strength',jsonValues.x_nouin_nousvenafi_default_key_strength);
+			g_form.setValue('organization',jsonValues.x_nouin_nousvenafi_default_organization);
+			g_form.setValue('organization_unit',jsonValues.x_nouin_nousvenafi_default_organization_unit);
+			g_form.setValue('state_province',jsonValues.x_nouin_nousvenafi_default_state_province);
+			g_form.setValue('certificate_authority',jsonValues.x_nouin_nousvenafi_default_certificate_authority);
+			g_form.setValue('csr_generation',jsonValues.x_nouin_nousvenafi_default_csr_generation);
+			g_form.setValue('management_type',jsonValues.x_nouin_nousvenafi_default_management_type);
+			getDetails(jsonValues.x_nouin_nousvenafi_default_city_locality,jsonValues.x_nouin_nousvenafi_default_common_name,jsonValues.x_nouin_nousvenafi_default_country,jsonValues.x_nouin_nousvenafi_default_key_algorithm,jsonValues.x_nouin_nousvenafi_default_key_strength,jsonValues.x_nouin_nousvenafi_default_organization,jsonValues.x_nouin_nousvenafi_default_subject_alternative_names,jsonValues.x_nouin_nousvenafi_default_certificate_authority,jsonValues.x_nouin_nousvenafi_default_csr_generation,jsonValues.x_nouin_nousvenafi_default_key_generation,jsonValues.x_nouin_nousvenafi_default_management_type,jsonValues.x_nouin_nousvenafi_default_certificate_enrollable);
+			g_form.setVisible("csr_contents",true);	
+		}
+}]]></script_true>
+        <set_values/>
+        <short_description>RITM CSR validation</short_description>
+        <sys_class_name>catalog_ui_policy</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-05-20 12:17:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>be921a95db653b006ff7fd741d961901</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>RITM CSR validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>catalog_ui_policy_be921a95db653b006ff7fd741d961901</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-05-20 12:26:46</sys_updated_on>
+        <table/>
+        <ui_type>0</ui_type>
+        <variable_set/>
+        <view/>
+    </catalog_ui_policy>
+</record_update>

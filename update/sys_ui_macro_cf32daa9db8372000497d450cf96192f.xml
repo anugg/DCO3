@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>default_tpp_req_values</name>
+        <scoped_name>x_nouin_nousvenafi_default_tpp_req_values</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-30 11:43:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>cf32daa9db8372000497d450cf96192f</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>default_tpp_req_values</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_macro_cf32daa9db8372000497d450cf96192f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-03 10:50:06</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0"  ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<g:evaluate var="gr_cat_item" object="true" jelly="true">	
+	var catItemId;
+	var ecString;
+	var gr2 = new GlideRecord('sc_cat_item');
+	gr2.addQuery('sys_scope.name', 'Digital Certificate Organizer');
+	gr2.query();
+	while(gr2.next()){
+	catItemId = gr2.sys_id;
+	}
+	 ecString = "cat_item.sys_id="+catItemId; 
+	
+</g:evaluate>
+	
+<g:evaluate var="gr_item_vars" object="true" jelly="true">	
+	
+	var gr3 = new GlideRecord('item_option_new');
+	gr3.addEncodedQuery(ecString);
+	gr3.addQuery('type','NOT IN','12,20,24,19,11,14,17');
+	gr3.addQuery('active', 'true');
+	gr3.orderBy('name');
+	gr3.query();
+	gr3;
+	
+</g:evaluate>
+
+<h3 style="color: #5e9ca0; margin-left: 45px; margin-top: 0px;">Default Values</h3>
+<g:ui_form>
+<table style="border-collapse: separate; border-spacing: 5px 5px;">
+	<j:while test="${gr3.next()}">
+		<j:set var="gr3name" value="${gr3.name}" />
+		<g:evaluate var="jvar_isChecked" jelly="true">
+			var isChecked = gs.getProperty('x_nouin_nousvenafi.default_'+ gr3.name);
+			isChecked;
+		</g:evaluate>
+		<j:if test="${jvar_isChecked != ''}">
+			<tr>
+				<td>
+					$[SP]<b>${gr3.question_text}:</b>
+					</td>
+			<td>
+				<span id="x_${gr3.name}">${jvar_isChecked}</span>
+			</td>
+			</tr>
+		</j:if>
+	</j:while>
+	</table>
+</g:ui_form>
+</j:jelly>
+
+]]></xml>
+    </sys_ui_macro>
+</record_update>

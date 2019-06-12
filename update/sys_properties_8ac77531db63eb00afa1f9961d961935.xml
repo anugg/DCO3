@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_nouin_nousvenafi.show_assigned_ci</name>
+        <read_roles/>
+        <suffix>show_assigned_ci</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-02-11 13:28:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8ac77531db63eb00afa1f9961d961935</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_nouin_nousvenafi.show_assigned_ci</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_properties_8ac77531db63eb00afa1f9961d961935</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-10 06:32:06</sys_updated_on>
+        <type>string</type>
+        <value>true</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=8ac77531db63eb00afa1f9961d961935"/>
+</record_update>

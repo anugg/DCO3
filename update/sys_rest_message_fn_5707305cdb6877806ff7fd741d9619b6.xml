@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile display_value="Rest Auth">a71d0f1bdbc47b406ff7fd741d9619b1</basic_auth_profile>
+        <basic_auth_user/>
+        <content>{"ObjectDN":"\\VED\\Policy\\Certificates\\lucky900.ser" }</content>
+        <function_name>GUID</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Create certificate [ GUID ]</qualified_name>
+        <rest_endpoint>https://10.0.0.126/VEDSDK/Config/DnToGuid</rest_endpoint>
+        <rest_message display_value="Create certificate">685ed4d0db2877806ff7fd741d96195a</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-03-28 10:00:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5707305cdb6877806ff7fd741d9619b6</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>GUID</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_5707305cdb6877806ff7fd741d9619b6</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-05-30 11:12:36</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server display_value="Venafi AWS dev35307">6cf6ef33dbd50300f74bf3d51d96199d</use_mid_server>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

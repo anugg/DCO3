@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Certificate Renewal History" max_length="40" name="x_nouin_nousvenafi_certificate_renewal_history" type="collection">
+        <element label="Certificate Request" max_length="40" name="certificate_request" reference="x_nouin_nousvenafi_certificate_rqst" type="reference"/>
+        <element display="true" label="Previous Valid From" max_length="100" name="previous_valid_from" type="string"/>
+        <element label="Previous Valid To" max_length="100" name="previous_valid_to" type="string"/>
+        <element label="Renewed By" max_length="40" name="renewed_by" type="string"/>
+        <element label="Renewed Valid From" max_length="100" name="renewed_valid_from" type="string"/>
+        <element label="Renewed Valid To" max_length="100" name="renewed_valid_to" type="string"/>
+        <element label="Response" max_length="1000" name="response" type="string"/>
+        <element audit="true" label="Status" max_length="40" name="status" type="string"/>
+        <index name="index">
+            <element name="certificate_request"/>
+        </index>
+    </element>
+</database>

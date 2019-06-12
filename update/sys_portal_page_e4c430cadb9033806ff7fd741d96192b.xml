@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2019-06-12 06:22:14">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout display_value="layout_2_across_knowledge">46978421370031002d2440ed9dbe5db7</layout>
+        <order/>
+        <read_roles/>
+        <roles/>
+        <selectable>false</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>sudhakar.c</sys_created_by>
+        <sys_created_on>2019-03-21 10:01:20</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e4c430cadb9033806ff7fd741d96192b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>PA Admin Reports</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_portal_page_e4c430cadb9033806ff7fd741d96192b</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-10 06:09:38</sys_updated_on>
+        <title>PA Admin Reports</title>
+        <user/>
+        <view>pa_all_active_certificate</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>3</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>13b8187adb787b006ff7fd741d96191a</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>13b8187adb787b006ff7fd741d96191b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d96191b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificates for Renewal</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1bb8187adb787b006ff7fd741d96191a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1fb8187adb787b006ff7fd741d96191a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>93b8187adb787b006ff7fd741d96191a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>88949436db787b006ff7fd741d961987</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d96191a</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9bb8187adb787b006ff7fd741d96191b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>2</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>13b8187adb787b006ff7fd741d961923</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_real_time</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>13b8187adb787b006ff7fd741d961924</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d961924</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1bb8187adb787b006ff7fd741d961923</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1bb8187adb787b006ff7fd741d961924</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1fb8187adb787b006ff7fd741d961923</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1fb8187adb787b006ff7fd741d961924</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificates Expiring within 90 days</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>93b8187adb787b006ff7fd741d961923</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>bcca03c4db38b300afa1f9961d9619c5</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">13b8187adb787b006ff7fd741d961923</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>93b8187adb787b006ff7fd741d961925</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>1</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>5bb8187adb787b006ff7fd741d961920</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>53b8187adb787b006ff7fd741d961921</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>53b8187adb787b006ff7fd741d961922</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>57b8187adb787b006ff7fd741d961921</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>57b8187adb787b006ff7fd741d961922</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificates Expiring within  60 days </value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_real_time</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5bb8187adb787b006ff7fd741d961921</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5fb8187adb787b006ff7fd741d961921</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d961920</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>784a3654dbf0f300afa1f9961d9619ef</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5bb8187adb787b006ff7fd741d961920</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d961922</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>2</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>5fb8187adb787b006ff7fd741d961917</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>53b8187adb787b006ff7fd741d961919</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>57b8187adb787b006ff7fd741d961918</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>57b8187adb787b006ff7fd741d961919</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificates by CI's</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5bb8187adb787b006ff7fd741d961918</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5fb8187adb787b006ff7fd741d961918</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d961919</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">5fb8187adb787b006ff7fd741d961917</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d961917</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>f360f0eedb243f806ff7fd741d9619f9</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone999</dropzone>
+                <offset>0</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>6bb8187adb787b006ff7fd741d961929</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>63b8187adb787b006ff7fd741d96192a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>63b8187adb787b006ff7fd741d96192b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>67b8187adb787b006ff7fd741d96192a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>67b8187adb787b006ff7fd741d96192b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificates Issued for your organization </value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_publish</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>6bb8187adb787b006ff7fd741d96192a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>6fb8187adb787b006ff7fd741d96192a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>pie</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>ebb8187adb787b006ff7fd741d961929</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>7309e719db8543000497d450cf9619ff</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">6bb8187adb787b006ff7fd741d961929</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>ebb8187adb787b006ff7fd741d96192b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>1</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>93b8187adb787b006ff7fd741d961915</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d961915</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>c86172c0dbf4b300afa1f9961d961958</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d961917</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>1bb8187adb787b006ff7fd741d961917</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_real_time</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>93b8187adb787b006ff7fd741d961916</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>97b8187adb787b006ff7fd741d961916</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9bb8187adb787b006ff7fd741d961915</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9bb8187adb787b006ff7fd741d961916</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>single_score</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9fb8187adb787b006ff7fd741d961915</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d961915</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9fb8187adb787b006ff7fd741d961916</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificate count in Queued Renewal  </value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>0</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>93b8187adb787b006ff7fd741d96191e</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d96191e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>1cc2afd1db8543000497d450cf96195f</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>17b8187adb787b006ff7fd741d961920</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_real_time</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>93b8187adb787b006ff7fd741d96191f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>97b8187adb787b006ff7fd741d96191f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9bb8187adb787b006ff7fd741d96191e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9bb8187adb787b006ff7fd741d96191f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9fb8187adb787b006ff7fd741d96191e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">93b8187adb787b006ff7fd741d96191e</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>9fb8187adb787b006ff7fd741d96191f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificate Requests Expiring within 30 Days</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>4</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>abb8187adb787b006ff7fd741d961927</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>27b8187adb787b006ff7fd741d961929</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>2fb8187adb787b006ff7fd741d961927</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>9eefe18cdbf0b300afa1f9961d9619d0</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>a3b8187adb787b006ff7fd741d961928</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>a7b8187adb787b006ff7fd741d961928</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>abb8187adb787b006ff7fd741d961928</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">abb8187adb787b006ff7fd741d961927</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>afb8187adb787b006ff7fd741d961928</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Weekly report of certificates for Renewal</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>0</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>d7b8187adb787b006ff7fd741d961912</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5bb8187adb787b006ff7fd741d961912</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>7299e24cdbb4b300afa1f9961d961922</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>is_using_database_view</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5bb8187adb787b006ff7fd741d961914</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5fb8187adb787b006ff7fd741d961914</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d3b8187adb787b006ff7fd741d961913</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d3b8187adb787b006ff7fd741d961914</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Total Active certificate</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_real_time</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d7b8187adb787b006ff7fd741d961913</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d961913</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>single_score</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d961912</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961912</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d961913</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone2</dropzone>
+                <offset>3</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>d7b8187adb787b006ff7fd741d961925</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>57b8187adb787b006ff7fd741d961927</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5bb8187adb787b006ff7fd741d961925</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>54b7e02adb243f806ff7fd741d961922</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d3b8187adb787b006ff7fd741d961926</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d7b8187adb787b006ff7fd741d961926</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d961926</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>bar</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d961925</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">d7b8187adb787b006ff7fd741d961925</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d961926</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Report on Revoked Certificates </value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone1</dropzone>
+                <offset>4</offset>
+                <page display_value="PA Admin Reports">e4c430cadb9033806ff7fd741d96192b</page>
+                <summary/>
+                <sys_created_by>jagdish.m</sys_created_by>
+                <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                <sys_id>dfb8187adb787b006ff7fd741d96191b</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>jagdish.m</sys_updated_by>
+                <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>53b8187adb787b006ff7fd741d96191c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>3488dd0cdbb0b300afa1f9961d961933</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>5fb8187adb787b006ff7fd741d96191d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>e4c430cadb9033806ff7fd741d96192b</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d3b8187adb787b006ff7fd741d96191d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>trend</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d7b8187adb787b006ff7fd741d96191c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>d7b8187adb787b006ff7fd741d96191d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>Certificate Expiration Week graph</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dbb8187adb787b006ff7fd741d96191c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2019-04-17 05:25:47">dfb8187adb787b006ff7fd741d96191b</portal_section>
+                        <sys_created_by>jagdish.m</sys_created_by>
+                        <sys_created_on>2019-04-17 12:25:47</sys_created_on>
+                        <sys_id>dfb8187adb787b006ff7fd741d96191c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>jagdish.m</sys_updated_by>
+                        <sys_updated_on>2019-04-17 12:25:47</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

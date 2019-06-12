@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_report">
+    <sysauto_report action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <address_list/>
+        <condition/>
+        <conditional>false</conditional>
+        <group_list/>
+        <include_detail>false</include_detail>
+        <include_with display_value="Updated certificates for last month">3ee6dfeedb747b006ff7fd741d961953</include_with>
+        <name>Count of updated certificates for Previous month</name>
+        <omit_if_no_records>false</omit_if_no_records>
+        <output_type>PDF-landscape</output_type>
+        <page_height_in_pixels>612</page_height_in_pixels>
+        <page_size>Letter</page_size>
+        <page_width_in_pixels>792</page_width_in_pixels>
+        <report display_value="Count of certificates updated on last month">44465faedb747b006ff7fd741d9619b3</report>
+        <report_body><![CDATA[<p>Hi Team,</p>
+<p>Please find Count of updated certificates for Previous month</p>
+<p>Regards,</p>
+<p>Anu</p>]]></report_body>
+        <report_title>Count of updated certificates for Previous month</report_title>
+        <run_as display_value="Anu G">a8065238db807b00afa1f9961d9619c8</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-04-17 07:40:35</run_start>
+        <run_time>1970-01-01 17:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <sys_class_name>sysauto_report</sys_class_name>
+        <sys_created_by>anu.g</sys_created_by>
+        <sys_created_on>2019-04-17 07:41:27</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b1779722dbb47b006ff7fd741d9619c2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Count of updated certificates for Previous month</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysauto_report_b1779722dbb47b006ff7fd741d9619c2</sys_update_name>
+        <sys_updated_by>anu.g</sys_updated_by>
+        <sys_updated_on>2019-04-17 07:42:37</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+        <user_list>a8065238db807b00afa1f9961d9619c8</user_list>
+        <zip>false</zip>
+    </sysauto_report>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="approver_nous" label="Approver" language="en" table="x_nouin_nousvenafi_certificate_rqst">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>approver_nous</element>
+            <help/>
+            <hint/>
+            <label>Approver</label>
+            <language>en</language>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <plural>Approvers</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-08-09 08:02:45</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_id>6c398bdcdb2c03000497d450cf96190c</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Approver</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_documentation_x_nouin_nousvenafi_certificate_rqst_approver_nous_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-08-09 08:03:07</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

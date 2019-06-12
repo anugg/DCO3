@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Request a Certificate">d9eb0a8edb5332000497d450cf96191f</catalog_item>
+        <catalog_variable>IO:a1249060dbdae7406ff7fd741d961977</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>sudhakar.c</sys_created_by>
+        <sys_created_on>2018-12-10 10:09:12</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>eded6ca5db5e6b406ff7fd741d9619d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>requested_for</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_eded6ca5db5e6b406ff7fd741d9619d1</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-12-10 10:09:12</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Assigned Field Read Only.">b0bde8a5db5e6b406ff7fd741d961976</ui_policy>
+        <variable>requested_for</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

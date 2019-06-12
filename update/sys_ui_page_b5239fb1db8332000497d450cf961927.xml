@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_nouin_nousvenafi_tpp_config_properties.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:ui_form>
+<h3 style="color: #5e9ca0; text-align: center;">TPP Configuration Settings</h3>
+<p>$[SP]</p>
+<table style="border-collapse: separate; border-spacing: 5px 5px;">
+
+		<g:evaluate var="jvar_venafi_url" jelly="true">
+	     var venafi_url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+			if(venafi_url=='null'){
+			venafi_url='';
+			}
+
+	venafi_url;
+</g:evaluate>
+<g:evaluate var="jvar_uname">
+	var uname = gs.getProperty('x_nouin_nousvenafi.uname');
+	if(uname=='null'){
+			uname='';
+			}
+	uname;
+</g:evaluate>
+		<g:evaluate var="jvar_password">
+	var password = gs.getProperty('x_nouin_nousvenafi.password');
+			if(password=='null'){
+			password='';
+			}
+	password;
+</g:evaluate>
+		<!-- <g:evaluate var="jvar_api_key">
+	var api_key = gs.getProperty('x_nouin_nousvenafi.api_key');
+			if(api_key=='null'){
+			api_key='';
+			}
+	api_key;
+</g:evaluate> -->
+		<g:evaluate var="jvar_midserver">
+	var midserver = gs.getProperty('x_nouin_nousvenafi.midserver');
+			if(midserver=='null'){
+			midserver='';
+			}
+	midserver;
+ </g:evaluate>
+	<g:evaluate var="jvar_certificate_expiring_days">
+	var certificateexpiringdays = gs.getProperty('x_nouin_nousvenafi.expiring_days_notification');
+			if(certificateexpiringdays=='null'){
+			certificateexpiringdays='';
+			}
+	certificateexpiringdays;
+ </g:evaluate>
+		
+		<g:ui_form>
+		<tr>
+			<td >
+			<g:ui_input_field type="url" name="venafi_url" id="url" label="Venafi Instance URL:" value="${jvar_venafi_url}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+			
+		<tr>
+			<td>
+				 <g:ui_input_field name="uname" id="uname" label="User Name:" value="${jvar_uname}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP] $[SP] $[SP]</td>
+		</tr>
+		<tr>
+			<td>
+			<g:ui_input_field type = "password" name="password" id="pwd" label="Password:" value="${jvar_password}" size ="80px" readonly="true"/> 
+			</td>
+			<td>$[SP]</td>
+		</tr>
+		<!-- <tr>
+			<td>
+			<g:ui_input_field name="api_key" id="api_key" label="API Key:" value="${jvar_api_key}" size ="80px"/>
+			</td>
+			<td>$[SP]</td>
+		</tr> -->
+		<tr>
+			<td>
+			<g:ui_input_field name="midserver" id="midserver" label="MID Server:" value="${jvar_midserver}" size ="80px" readonly="true"/>
+           </td>
+			<td>$[SP]</td>
+			</tr>
+			<tr>
+			<td>
+			<g:ui_input_field name="certificateexpiringdays" id="certificateexpiringdays" label="Certificate Expiring Notification Days" value="${jvar_certificate_expiring_days}" size ="80px" readonly="true"/>
+			</td>
+			<td>$[SP]</td>
+		</tr>
+		<tr><td colspan="2" height="15px"></td></tr>
+	<tr><td style="text-align: center;" colspan="2">
+		<g:dialog_buttons_ok_cancel ok="return true" cancel="return false"/>
+	</td></tr>
+			</g:ui_form>
+
+</table>
+</g:ui_form>
+</j:jelly>]]></html>
+        <name>tpp_config_properties</name>
+        <processing_script><![CDATA[var requestBody;
+var response;
+var responseBody;
+var status;
+var sm;
+var url;
+/*try{
+	
+	var ven_url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+	url = (ven_url+ 'authorize');
+	gs.info("URL in Processing Script:"+url);
+	var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+	var body = '{"Username":"'+uname.toString()+'","Password":"'+password.toString()+'"}';
+		//gs.info('body:'+body);
+		var restMessage = new sn_ws.RESTMessageV2();
+		restMessage.setHttpMethod("post");
+		restMessage.setEndpoint(url);
+		restMessage.setRequestHeader('Content-Type','application/json');
+		restMessage.setRequestBody(body);
+		restMessage.setMIDServer(mid_server);
+		restMessage.setEccParameter('skip_sensor',true);
+		var response = restMessage.execute();
+		responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+		status = response.getStatusCode();
+	} catch(ex){
+		responseBody = ex.getMessage();
+		status = '500';
+	}
+	var objJSON = JSON.parse(responseBody);
+	var key = objJSON.APIKey;
+	gs.info("Key in Processing Script:"+key);*/
+	//Set Properties
+	gs.setProperty("x_nouin_nousvenafi.venafi_url", venafi_url);
+	gs.setProperty("x_nouin_nousvenafi.uname", uname);
+	gs.setProperty("x_nouin_nousvenafi.password", password);
+	//gs.setProperty("x_nouin_nousvenafi.api_key", key);
+	gs.setProperty("x_nouin_nousvenafi.midserver", midserver);
+	gs.setProperty("x_nouin_nousvenafi.expiring_days_notification", certificateexpiringdays);
+	
+	]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-31 11:03:24</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b5239fb1db8332000497d450cf961927</sys_id>
+        <sys_mod_count>90</sys_mod_count>
+        <sys_name>tpp_config_properties</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_page_b5239fb1db8332000497d450cf961927</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2018-11-12 10:56:19</sys_updated_on>
+    </sys_ui_page>
+</record_update>

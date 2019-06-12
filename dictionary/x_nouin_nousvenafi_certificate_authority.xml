@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Certificate Authority" max_length="40" name="x_nouin_nousvenafi_certificate_authority" type="collection">
+        <element display="true" label="Description" max_length="1000" name="description" type="string_full_utf8"/>
+        <element label="Name" max_length="1000" name="name" type="string_full_utf8"/>
+    </element>
+</database>

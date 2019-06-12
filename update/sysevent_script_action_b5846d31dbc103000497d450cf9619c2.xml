@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <condition_script/>
+        <description/>
+        <event_name>approval.cancelled</event_name>
+        <name>get certificate details</name>
+        <order>100</order>
+        <script><![CDATA[var url = gs.getProperty('x_nouin_nousvenafi.venafi_url');
+var mid_server = gs.getProperty('x_nouin_nousvenafi.midserver');
+var guid = event.parm1;
+var urlNew = url+'certificates'+'/'+guid;
+var apiKey = event.parm2;
+var responseBody;
+var validTo;
+var validFrom;
+
+
+gs.info("URL in SA"+urlNew);
+gs.info("GUID SA=="+event.parm1 );
+gs.info("apiKey SA=="+ apiKey);
+
+try{
+var r = new sn_ws.RESTMessageV2();
+r.setEndpoint(urlNew);
+r.setHttpMethod("GET");
+r.setRequestHeader('Content-Type','application/json');
+r.setRequestHeader('X-Venafi-Api-Key', apiKey);
+r.setMIDServer(mid_server);
+r.setEccParameter('skip_sensor',true);
+var response = r.execute();
+response.waitForResponse(2000);
+responseBody = response.getBody();
+gs.info("Response in SA: " + responseBody);
+gs.info("Header"+ r.getEndpoint());
+
+
+var objJSON = JSON.parse(responseBody);
+validTo = objJSON.CertificateDetails.ValidTo;
+validFrom = objJSON.CertificateDetails.ValidFrom;
+gs.info("ValidTo in SA: "+validTo);
+gs.info("ValidFrom in SA: "+validFrom);
+
+if((validTo == '') || (validTo == undefined) || (validTo == 'NULL') || (validFrom == undefined)){
+	gs.info("Inside IF Retrieve");
+	gs.eventQueue("x_nouin_nousvenafi.request.certificate.det",current,guid,apiKey);
+}
+
+
+else{
+		var gr = new GlideRecord('x_nouin_nousvenafi_certificate_rqst');
+		gr.addQuery('requested_item',current.sys_id);
+		gr.query();
+		while(gr.next()){
+		gs.info("Inside else Certificate request while");
+		gr.certificate_valid_to = validTo;
+		gr.certificate_valid_from = validFrom;
+		gr.update();
+		}
+}
+	}
+		catch(ex) {
+	responseBody = ex.getMessage();
+	status = '500';
+} finally {
+	requestBody = sm ? sm.getRequestBody():null;
+}
+	
+	/*var eventRecord = new GlideRecord('sysevent');
+	eventRecord.addQuery('name','x_nouin_nousvenafi.request.certificate.det');
+	gs.info("Current Sysid inside if:"+current.sys_id);
+	eventRecord.addQuery('instance', current.sys_id);
+	//eventRecord.addQuery('sys_id', current.sys_id);
+	eventRecord.query();
+	gs.info("Event Record Count 1:"+eventRecord.getRowCount());
+	while(eventRecord.next()){
+		gs.info("Inside script action while loop 1");
+		eventRecord.state = 'ready';
+		eventRecord.processed = 'NULL';
+		eventRecord.processing_duration = 'NULL';
+		eventRecord.update();
+		eventRecord.state="stop_processing";
+		
+	}*/
+
+]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-09-07 13:07:34</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b5846d31dbc103000497d450cf9619c2</sys_id>
+        <sys_mod_count>88</sys_mod_count>
+        <sys_name>get certificate details</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sysevent_script_action_b5846d31dbc103000497d450cf9619c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-09-18 06:52:26</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

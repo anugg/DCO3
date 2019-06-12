@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description>CSR Contents</description>
+        <media_type/>
+        <name>csr_m_contents</name>
+        <scoped_name>x_nouin_nousvenafi_csr_m_contents</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>jagdish.m</sys_created_by>
+        <sys_created_on>2019-04-02 04:16:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5fc85571dba43f40afa1f9961d96193c</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>csr_m_contents</sys_name>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_update_name>sys_ui_macro_5fc85571dba43f40afa1f9961d96193c</sys_update_name>
+        <sys_updated_by>sudhakar.c</sys_updated_by>
+        <sys_updated_on>2019-04-10 06:35:37</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">				
+	<g:evaluate var="jvar_csr_contents" object="true">
+		
+	</g:evaluate>	
+	<head>
+	<script>		
+		function getDetails(city,cmn,country,key_algo,key_str,org,alt_name,cert_auth,csr_gen,key_gen,mgt_type,enroll)
+	   {		 
+		$j("#city").val(city);
+		$j("#cmn").val(cmn);
+		$j("#country").val(country);
+		$j("#key_algo").val(key_algo);
+		$j("#key_str").val(key_str);
+		$j("#org").val(org);
+		$j("#alt_name").val(alt_name);
+		$j("#cert_auth").val(cert_auth);
+		$j("#csr_gen").val(csr_gen);
+		$j("#key_gen").val(key_gen);
+		$j("#mgt_type").val(mgt_type);
+		$j("#enroll").val(enroll);
+		}
+	</script>	
+	<style>
+		input{
+			border:none; 
+			border-color:transparent;
+			color: #2C3539;
+		}
+		th{
+			text-decoration: underline;
+		}		
+		table.csr_cont{
+			table-layout: fixed;
+			width: 90%;
+			border-collapse: collapse;			
+		}
+		
+	</style>
+	</head>
+	<body>
+	<table class="csr_cont">
+	<tr><th>Label</th><th>Value</th><th>Correct Value/Hint</th>
+	</tr><tr>
+		<td>City: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_city_locality')}" /></td><td><input id="city" type="text"/></td>
+	</tr><tr>
+			<td>Common Name: </td><td><input type="text"  value="${gs.getProperty('x_nouin_nousvenafi.default_common_name')}"/></td><td><input id="cmn" type="text"/></td>
+	</tr><tr>
+			<td>Country: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_country')}"/></td><td><input id="country" type="text"/></td>
+	</tr><tr>
+			<td>Key Algorithm: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_key_algorithm')}"/></td><td><input id="key_algo" type="text"/></td>
+	</tr><tr>
+			<td>Key Strength: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_key_strength')}"/></td><td><input id="key_str" type="text"/></td>
+	</tr><tr>
+			<td>Organization: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_organization')}"/></td><td><input id="org" type="text"/></td>
+	</tr><tr>
+			<td>Subject Alternative Names: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_subject_alternative_names')}"/></td><td><input id="alt_name" type="text"/></td>
+	</tr><tr>
+			<td>Certificate Authority: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_certificate_authority')}"/></td><td><input id="cert_auth" type="text"/></td>
+	</tr><tr>
+			<td>CSR Generation: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_csr_generation')}"/></td><td><input id="csr_gen" type="text"/></td>
+	</tr><!-- <tr>
+			<td>Key Generation: </td><td><input type="text" value="${gs.getProperty('')}"/></td><td><input id="key_gen" type="text"/></td>
+	</tr> --><tr>
+			<td>Management Type: </td><td><input type="text" value="${gs.getProperty('x_nouin_nousvenafi.default_management_type')}"/></td><td><input id="mgt_type" type="text"/></td>
+	</tr><!-- <tr>
+			<td>Enrollable: </td><td><input type="text" value="${gs.getProperty('')}"/></td><td><input id="enroll" type="text"/></td>
+	</tr>	 -->
+	
+	</table>
+	</body>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>

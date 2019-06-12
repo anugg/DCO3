@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_nouin_nousvenafi_certificate_rqst" version="2" view="certificates_renewal_history">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Certificates - Certificates Renewal History" name="x_nouin_nousvenafi_certificate_rqst" related_list="NULL" sys_domain="global" view="b3a8f191db55c7000497d450cf96198c">fdc87591db55c7000497d450cf9619ed</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>REL:292da5d9db15c7000497d450cf96192c</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-09-18 11:32:24</sys_created_on>
+            <sys_id>b5c87591db55c7000497d450cf9619ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-09-18 11:32:24</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Certificates - Certificates Renewal History</calculated_name>
+            <filter/>
+            <name>x_nouin_nousvenafi_certificate_rqst</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-09-18 11:32:24</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fdc87591db55c7000497d450cf9619ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Certificate Rqst - Certificates Renewal History</sys_name>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_update_name>sys_ui_related_x_nouin_nousvenafi_certificate_rqst_certificates_renewal_history</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-09-18 11:32:24</sys_updated_on>
+            <sys_user/>
+            <view display_value="Certificates Renewal History" name="certificates_renewal_history">b3a8f191db55c7000497d450cf96198c</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>
