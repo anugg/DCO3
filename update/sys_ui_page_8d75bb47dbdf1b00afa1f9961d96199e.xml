@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_ui_page">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
         <client_script/>
@@ -102,9 +101,9 @@
         <sys_id>8d75bb47dbdf1b00afa1f9961d96199e</sys_id>
         <sys_mod_count>28</sys_mod_count>
         <sys_name>contact_support_module</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_ui_page_8d75bb47dbdf1b00afa1f9961d96199e</sys_update_name>
         <sys_updated_by>sudhakar.c</sys_updated_by>
         <sys_updated_on>2018-11-12 10:54:52</sys_updated_on>

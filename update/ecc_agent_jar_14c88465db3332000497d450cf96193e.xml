@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="ecc_agent_jar">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_agent_jar">
     <ecc_agent_jar action="INSERT_OR_UPDATE">
         <active>false</active>
         <description/>
@@ -16,9 +15,9 @@
         <sys_mod_count>2</sys_mod_count>
         <sys_name>Test</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>ecc_agent_jar_14c88465db3332000497d450cf96193e</sys_update_name>
         <sys_updated_by>sudhakar.c</sys_updated_by>
         <sys_updated_on>2019-05-10 06:36:26</sys_updated_on>
@@ -29,12 +28,12 @@
         <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>application/octet-stream</content_type>
-        <encryption_context/>
         <file_name>Test.jar</file_name>
         <image_height/>
         <image_width/>
         <size_bytes>1884</size_bytes>
         <size_compressed>1600</size_compressed>
+        <state/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-08-22 12:08:37</sys_created_on>
         <sys_id>742e3eacdb3043000497d450cf9619b5</sys_id>

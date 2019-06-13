@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="pa_dashboards_permissions">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="pa_dashboards_permissions">
     <pa_dashboards_permissions action="INSERT_OR_UPDATE">
         <dashboard display_value="Mgr Dashboard">1349bde4db86d700f74bf3d51d9619df</dashboard>
         <delete>false</delete>
-        <group display_value="Managers " name="Managers ">1ff434b0dbcad700f74bf3d51d9619df</group>
+        <group display_value="">1ff434b0dbcad700f74bf3d51d9619df</group>
         <identity>1ff434b0dbcad700f74bf3d51d9619df</identity>
         <read>true</read>
         <role/>
@@ -13,9 +12,9 @@
         <sys_id>2967f7684f423300c2cb704ca310c7dd</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>1ff434b0dbcad700f74bf3d51d9619df</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>pa_dashboards_permissions_2967f7684f423300c2cb704ca310c7dd</sys_update_name>
         <sys_updated_by>Anu</sys_updated_by>
         <sys_updated_on>2019-06-12 08:10:45</sys_updated_on>

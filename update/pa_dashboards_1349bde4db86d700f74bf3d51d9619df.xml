@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="pa_dashboards">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_dashboards">
     <pa_dashboards action="INSERT_OR_UPDATE">
         <active>true</active>
         <breakdown_source/>
+        <color/>
         <group display_value="">ff22a2f5db769f40afa1f9961d961995</group>
-        <groups name="Managers ">1ff434b0dbcad700f74bf3d51d9619df</groups>
+        <groups>1ff434b0dbcad700f74bf3d51d9619df</groups>
         <is_breakdown>false</is_breakdown>
         <managed_breakdown/>
         <managed_publisher/>
@@ -25,9 +25,9 @@
         <sys_mod_count>5</sys_mod_count>
         <sys_name>Mgr Dashboard</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>pa_dashboards_1349bde4db86d700f74bf3d51d9619df</sys_update_name>
         <sys_updated_by>Anu</sys_updated_by>
         <sys_updated_on>2019-06-12 08:10:44</sys_updated_on>

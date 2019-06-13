@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_filter">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_filter">
     <sys_filter action="INSERT_OR_UPDATE">
         <filter table="sys_user">nameSTARTSWITHli^nameISNOTEMPTY^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="STARTSWITH" or="false" value="li"/>
             <item endquery="false" field="name" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
@@ -17,9 +16,9 @@
         <sys_id>c8f580e2db23df00f74bf3d51d961924</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>mobile</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_filter_c8f580e2db23df00f74bf3d51d961924</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-07-29 16:55:31</sys_updated_on>
@@ -27,4 +26,5 @@
         <title>mobile</title>
         <user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user>
     </sys_filter>
+    <sys_translated_text action="delete_multiple" query="documentkey=c8f580e2db23df00f74bf3d51d961924"/>
 </record_update>

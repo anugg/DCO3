@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_ui_action_view">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view">
     <sys_ui_action_view action="INSERT_OR_UPDATE">
         <sys_class_name>sys_ui_action_view</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -7,11 +6,11 @@
         <sys_id>12eeb493dbf54f00f74bf3d51d96196a</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Retire.Revoke &amp; Retired Certificates</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_ui_action display_value="Retire">5796af3adb35cb00afa1f9961d9619f8</sys_ui_action>
-        <sys_ui_view display_value="Revoke &amp; Retired Certificates" name="revoke">2179ee93dbc1c3000497d450cf961940</sys_ui_view>
+        <sys_ui_view display_value="">2179ee93dbc1c3000497d450cf961940</sys_ui_view>
         <sys_update_name>sys_ui_action_view_12eeb493dbf54f00f74bf3d51d96196a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2017-10-19 09:08:38</sys_updated_on>

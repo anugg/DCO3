@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sysauto_report">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_report">
     <sysauto_report action="INSERT_OR_UPDATE">
         <active>true</active>
         <address_list/>
@@ -31,9 +30,9 @@
         <sys_id>c4a64742db7db3006ff7fd741d961970</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>Subscription Reportfor DCO App Grouped by subscribed users </sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sysauto_report_c4a64742db7db3006ff7fd741d961970</sys_update_name>
         <sys_updated_by>anu.g</sys_updated_by>
         <sys_updated_on>2019-06-04 10:19:16</sys_updated_on>

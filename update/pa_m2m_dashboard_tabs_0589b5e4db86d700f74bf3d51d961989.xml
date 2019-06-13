@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="pa_m2m_dashboard_tabs">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs">
     <pa_m2m_dashboard_tabs action="INSERT_OR_UPDATE">
         <dashboard display_value="Mgr Dashboard">1349bde4db86d700f74bf3d51d9619df</dashboard>
         <home>false</home>
@@ -14,9 +13,9 @@
         <sys_mod_count>0</sys_mod_count>
         <sys_name>1349bde4db86d700f74bf3d51d9619df</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>pa_m2m_dashboard_tabs_0589b5e4db86d700f74bf3d51d961989</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-05-10 06:38:27</sys_updated_on>

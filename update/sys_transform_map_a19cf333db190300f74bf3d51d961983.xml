@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_transform_map">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_map">
     <sys_transform_map action="INSERT_OR_UPDATE">
         <active>false</active>
         <copy_empty_fields>false</copy_empty_fields>
+        <create_new_record_on_empty_coalesce_fields>false</create_new_record_on_empty_coalesce_fields>
         <enforce_mandatory_fields>No</enforce_mandatory_fields>
         <name>x_nouin_nousvenafi_hash_algorithm_staging</name>
         <order>100</order>
@@ -20,9 +20,9 @@
         <sys_id>a19cf333db190300f74bf3d51d961983</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>x_nouin_nousvenafi_hash_algorithm_staging</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_transform_map_a19cf333db190300f74bf3d51d961983</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-07-03 09:48:58</sys_updated_on>

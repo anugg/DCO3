@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="wf_workflow_version">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_workflow_version">
     <wf_workflow_version action="INSERT_OR_UPDATE">
         <active>true</active>
         <activity_stages>{"activities":{"0e18e115dbe13b006ff7fd741d9619ee":"0a18e115dbe13b006ff7fd741d9619e9","5a186915dbe13b006ff7fd741d9619b1":"0a18e115dbe13b006ff7fd741d9619e9","9a186915dbe13b006ff7fd741d9619ad":"0618e115dbe13b006ff7fd741d9619ea","9a186915dbe13b006ff7fd741d9619b8":"8218e115dbe13b006ff7fd741d9619ea","42186915dbe13b006ff7fd741d9619a2":"8a18e115dbe13b006ff7fd741d9619e9","56186915dbe13b006ff7fd741d9619ac":"8618e115dbe13b006ff7fd741d9619ea","4e18e115dbe13b006ff7fd741d9619ea":"0618e115dbe13b006ff7fd741d9619ea","1a186915dbe13b006ff7fd741d9619a9":"0a18e115dbe13b006ff7fd741d9619e9","c618e115dbe13b006ff7fd741d9619ed":"0618e115dbe13b006ff7fd741d9619ea"},"subflows":[],"stages":{"8618e115dbe13b006ff7fd741d9619ea":{"duration":"","order":115,"stageId":"8618e115dbe13b006ff7fd741d9619ea","name":"Request Completed","value":"dwnload_certificate"},"8218e115dbe13b006ff7fd741d9619ea":{"duration":"1 Day","order":90,"stageId":"8218e115dbe13b006ff7fd741d9619ea","name":"Certificate Requested","value":"cert_rqstd"},"8a18e115dbe13b006ff7fd741d9619e9":{"duration":"1 Day","order":100,"stageId":"8a18e115dbe13b006ff7fd741d9619e9","name":"Awaiting Certificate Approval","value":"waiting_for_approval"},"0618e115dbe13b006ff7fd741d9619ea":{"duration":"1 Day","order":110,"stageId":"0618e115dbe13b006ff7fd741d9619ea","name":"Retrieve Certificate Details","value":"retrieve_cert_details"},"0a18e115dbe13b006ff7fd741d9619e9":{"duration":"1 Day","order":105,"stageId":"0a18e115dbe13b006ff7fd741d9619e9","name":"Initiate Certificate Request","value":"initiate_cert_rqst"}},"ends":["5a186915dbe13b006ff7fd741d9619a7"]}</activity_stages>
@@ -54,9 +53,9 @@
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Nous TPP Workflow</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>wf_workflow_5f972692db1332000497d450cf9619c6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2017-06-14 07:25:24</sys_updated_on>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_filter">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_filter">
     <sys_filter action="INSERT_OR_UPDATE">
         <filter table="sys_user">nameSTARTSWITHve^nameISNOTEMPTY^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="STARTSWITH" or="false" value="ve"/>
             <item endquery="false" field="name" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
@@ -17,9 +16,9 @@
         <sys_id>233f15c8db2003000497d450cf961995</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>mobile</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_filter_233f15c8db2003000497d450cf961995</sys_update_name>
         <sys_updated_by>venafi_tppadmin</sys_updated_by>
         <sys_updated_on>2017-08-08 05:41:21</sys_updated_on>
@@ -27,4 +26,5 @@
         <title>mobile</title>
         <user display_value="">45c10e33db9443000497d450cf96196c</user>
     </sys_filter>
+    <sys_translated_text action="delete_multiple" query="documentkey=233f15c8db2003000497d450cf961995"/>
 </record_update>

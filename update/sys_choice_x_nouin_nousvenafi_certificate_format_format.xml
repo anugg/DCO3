@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_choice action="INSERT_OR_UPDATE" field="format" table="x_nouin_nousvenafi_certificate_format" version="3">
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -124,9 +123,9 @@
             <sys_id>373377e04f423300c2cb704ca310c784</sys_id>
             <sys_mod_count>22</sys_mod_count>
             <sys_name>format</sys_name>
-            <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+            <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
             <sys_policy/>
-            <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+            <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
             <sys_update_name>sys_choice_x_nouin_nousvenafi_certificate_format_format</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2017-07-11 08:43:00</sys_updated_on>

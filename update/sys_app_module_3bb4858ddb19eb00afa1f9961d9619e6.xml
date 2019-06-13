@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_app_module">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
         <application display_value="System Web Services">18f23e670a0a0b2400c55b122be52373</application>
@@ -29,9 +28,9 @@
         <sys_mod_count>0</sys_mod_count>
         <sys_name>test1</sys_name>
         <sys_overrides/>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>sys_app_module_3bb4858ddb19eb00afa1f9961d9619e6</sys_update_name>
         <sys_updated_by>lisa.rani</sys_updated_by>
         <sys_updated_on>2018-10-20 05:28:55</sys_updated_on>

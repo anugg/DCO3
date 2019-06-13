@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="hasLabels=true" label="Policy" max_length="40" name="x_nouin_nousvenafi_policy" type="collection">
         <element label="Certificate Authority" max_length="100" name="certificate_authority" reference="x_nouin_nousvenafi_certificate_authority" type="reference"/>
         <element label="Folder Path" max_length="160" name="folder_path" type="string"/>

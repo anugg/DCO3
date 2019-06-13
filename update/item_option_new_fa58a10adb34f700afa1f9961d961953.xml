@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="item_option_new">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new">
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
         <attributes/>
@@ -62,9 +61,9 @@
         <sys_id>fa58a10adb34f700afa1f9961d961953</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>SAN (DNS)</sys_name>
-        <sys_package display_value="Digital certiifcate Organizer 3.0" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
+        <sys_package display_value="Digital Certificate Organizer" source="x_nouin_nousvenafi">16131e3fdb150300f74bf3d51d96191f</sys_package>
         <sys_policy/>
-        <sys_scope display_value="Digital certiifcate Organizer 3.0">16131e3fdb150300f74bf3d51d96191f</sys_scope>
+        <sys_scope display_value="Digital Certificate Organizer">16131e3fdb150300f74bf3d51d96191f</sys_scope>
         <sys_update_name>item_option_new_fa58a10adb34f700afa1f9961d961953</sys_update_name>
         <sys_updated_by>jagdish.m</sys_updated_by>
         <sys_updated_on>2019-04-15 10:19:21</sys_updated_on>
@@ -74,6 +73,7 @@
         <ui_page/>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
+        <validate_regex/>
         <variable_name/>
         <variable_set/>
         <variable_width/>
